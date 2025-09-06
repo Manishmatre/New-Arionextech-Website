@@ -1,7 +1,15 @@
 /// <reference types="vite/client" />
 /// <reference types="vite-plugin-svgr/client" />
 
-import 'vite/client';
+declare module '*.module.css' {
+  const classes: { [key: string]: string };
+  export default classes;
+}
+
+declare module '*.module.scss' {
+  const classes: { [key: string]: string };
+  export default classes;
+}
 
 declare module '*.svg' {
   import * as React from 'react';
@@ -30,6 +38,27 @@ declare module '*.gif' {
   export default src;
 }
 
+// For CSS
+interface CSSModuleClasses {
+  [key: string]: string;
+}
+
+// For SCSS
+interface CSSModule {
+  [key: string]: string;
+}
+
+declare module '*.module.css' {
+  const classes: CSSModuleClasses;
+  export default classes;
+}
+
+declare module '*.module.scss' {
+  const classes: CSSModule;
+  export default classes;
+}
+
+// For environment variables
 interface ImportMetaEnv {
   readonly VITE_APP_TITLE: string;
   // more env variables...

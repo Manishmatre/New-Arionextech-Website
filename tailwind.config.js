@@ -28,5 +28,5 @@ export default {
       },
     },
   },
-  plugins: [],
-}
+  // Tailwind v4 plugins should be added via CSS using @plugin
+};
