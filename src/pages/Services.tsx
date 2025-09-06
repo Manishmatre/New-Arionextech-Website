@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { 
   CodeBracketIcon, 
   CloudArrowUpIcon, 
@@ -16,31 +17,73 @@ const Services = () => {
       title: 'Web Development',
       description: 'Custom websites and web applications built with the latest technologies for optimal performance and user experience.',
       icon: <CodeBracketIcon className="h-10 w-10 text-primary" />,
+      link: '/services/web-development',
     },
     {
       title: 'Mobile Apps',
       description: 'Native and cross-platform mobile applications for iOS and Android that engage users and drive business growth.',
       icon: <DevicePhoneMobileIcon className="h-10 w-10 text-primary" />,
+      link: '/services/mobile-app-development',
     },
     {
       title: 'Cloud Solutions',
       description: 'Scalable and secure cloud infrastructure to optimize your business operations and reduce costs.',
       icon: <CloudArrowUpIcon className="h-10 w-10 text-primary" />,
+      link: '/services/cloud-solutions',
     },
     {
       title: 'AI & ML',
       description: 'Intelligent solutions powered by artificial intelligence and machine learning to transform your business.',
       icon: <CpuChipIcon className="h-10 w-10 text-primary" />,
+      link: '/services/ai-ml',
     },
     {
       title: 'DevOps',
       description: 'Streamlined development and operations with continuous integration and deployment pipelines.',
       icon: <ServerStackIcon className="h-10 w-10 text-primary" />,
+      link: '/services/devops',
     },
     {
       title: 'Cybersecurity',
       description: 'Comprehensive security solutions to protect your digital assets and ensure compliance.',
       icon: <ShieldCheckIcon className="h-10 w-10 text-primary" />,
+      link: '/services/cybersecurity',
+    },
+    {
+      title: 'UI/UX Design',
+      description: 'User-centered design solutions that create exceptional experiences and drive conversions.',
+      icon: <CodeBracketIcon className="h-10 w-10 text-primary" />,
+      link: '/services/ui-ux-design',
+    },
+    {
+      title: 'SEO & Backlinks',
+      description: 'Boost your search rankings with proven SEO strategies and high-quality backlink building.',
+      icon: <CodeBracketIcon className="h-10 w-10 text-primary" />,
+      link: '/services/seo-backlinks',
+    },
+    {
+      title: 'Digital Marketing',
+      description: 'Growth-driven marketing campaigns across all major platforms to expand your reach.',
+      icon: <CodeBracketIcon className="h-10 w-10 text-primary" />,
+      link: '/services/digital-marketing',
+    },
+    {
+      title: 'Graphic Design',
+      description: 'Creative visual solutions that communicate your brand message effectively and professionally.',
+      icon: <CodeBracketIcon className="h-10 w-10 text-primary" />,
+      link: '/services/graphic-design',
+    },
+    {
+      title: 'Staff Augmentation',
+      description: 'Scale your team with pre-vetted, skilled professionals who integrate seamlessly with your workforce.',
+      icon: <CodeBracketIcon className="h-10 w-10 text-primary" />,
+      link: '/services/staff-augmentation',
+    },
+    {
+      title: 'Custom Software',
+      description: 'Tailored software solutions designed specifically for your unique business requirements and workflows.',
+      icon: <CodeBracketIcon className="h-10 w-10 text-primary" />,
+      link: '/services/custom-software',
     },
   ];
 
@@ -89,10 +132,13 @@ const Services = () => {
                 </div>
                 <h3 className="text-xl font-semibold mb-4 text-gray-900">{service.title}</h3>
                 <p className="text-gray-600 mb-6">{service.description}</p>
-                <div className="flex items-center text-primary font-medium group-hover:text-primary-dark transition-colors">
+                <Link 
+                  to={service.link}
+                  className="flex items-center text-primary font-medium group-hover:text-primary-dark transition-colors"
+                >
                   <span>Learn More</span>
                   <ArrowRightIcon className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                </div>
+                </Link>
               </motion.div>
             ))}
           </div>
