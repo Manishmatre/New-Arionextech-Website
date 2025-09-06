@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import type { Variants } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRightIcon, CodeBracketIcon, CloudArrowUpIcon, CpuChipIcon } from '@heroicons/react/24/outline';
+import { ArrowRightIcon, CodeBracketIcon, CloudArrowUpIcon, CpuChipIcon, StarIcon } from '@heroicons/react/24/outline';
 
 const Home = () => {
   const fadeInUp: Variants = {
@@ -44,6 +44,33 @@ const Home = () => {
       icon: <CpuChipIcon className="h-8 w-8 text-primary" />,
       title: 'AI & ML',
       description: 'Leverage the power of artificial intelligence and machine learning.',
+    },
+  ];
+
+  const testimonials = [
+    {
+      name: 'Rajesh Kumar',
+      position: 'CEO, TechStart Solutions',
+      company: 'TechStart Solutions',
+      image: 'RK',
+      rating: 5,
+      text: 'ArionexTech delivered an exceptional CRM solution that transformed our business operations. Their team understood our requirements perfectly and delivered beyond expectations.',
+    },
+    {
+      name: 'Priya Sharma',
+      position: 'Director, EduVision Institute',
+      company: 'EduVision Institute',
+      image: 'PS',
+      rating: 5,
+      text: 'The education management system they built for us has streamlined our entire workflow. Student management, fee tracking, and reporting - everything is now seamless.',
+    },
+    {
+      name: 'Amit Patel',
+      position: 'Founder, RetailMax',
+      company: 'RetailMax',
+      image: 'AP',
+      rating: 5,
+      text: 'Outstanding work on our e-commerce platform! The team delivered a robust, scalable solution that handles our growing customer base effortlessly.',
     },
   ];
 
@@ -154,6 +181,80 @@ const Home = () => {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              What Our Clients Say
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Don't just take our word for it. Here's what our satisfied clients have to say about working with ArionexTech.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300"
+              >
+                {/* Rating Stars */}
+                <div className="flex mb-4">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <StarIcon key={i} className="h-5 w-5 text-yellow-400 fill-current" />
+                  ))}
+                </div>
+
+                {/* Testimonial Text */}
+                <p className="text-gray-600 mb-6 italic">
+                  "{testimonial.text}"
+                </p>
+
+                {/* Client Info */}
+                <div className="flex items-center">
+                  <div className="flex-shrink-0 h-12 w-12 bg-gradient-to-br from-primary/20 to-primary/40 rounded-full flex items-center justify-center">
+                    <span className="text-primary font-semibold text-sm">{testimonial.image}</span>
+                  </div>
+                  <div className="ml-4">
+                    <h4 className="font-semibold text-gray-900">{testimonial.name}</h4>
+                    <p className="text-sm text-gray-600">{testimonial.position}</p>
+                    <p className="text-sm text-primary font-medium">{testimonial.company}</p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* View More Button */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="text-center mt-12"
+          >
+            <Link
+              to="/about#testimonials"
+              className="btn btn-outline inline-flex items-center justify-center"
+            >
+              View More Testimonials
+              <ArrowRightIcon className="ml-2 h-5 w-5" />
+            </Link>
+          </motion.div>
         </div>
       </section>
 

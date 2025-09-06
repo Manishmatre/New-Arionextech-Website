@@ -17,26 +17,36 @@ const Footer = () => {
       title: 'Company',
       links: [
         { name: 'About Us', path: '/about' },
-        { name: 'Services', path: '/services' },
-        { name: 'Products', path: '/products' },
+        { name: 'Our Team', path: '/about#team' },
         { name: 'Careers', path: '/careers' },
+        { name: 'Contact', path: '/contact' },
+      ],
+    },
+    {
+      title: 'Services',
+      links: [
+        { name: 'Web Development', path: '/services#web' },
+        { name: 'Mobile Apps', path: '/services#mobile' },
+        { name: 'Cloud Solutions', path: '/services#cloud' },
+        { name: 'AI & ML', path: '/services#ai' },
+      ],
+    },
+    {
+      title: 'Products',
+      links: [
+        { name: 'ArionexCRM', path: '/products#crm' },
+        { name: 'EduTrack Pro', path: '/products#edutrack' },
+        { name: 'RetailFlow', path: '/products#retail' },
+        { name: 'DataViz Analytics', path: '/products#analytics' },
       ],
     },
     {
       title: 'Support',
       links: [
-        { name: 'Contact Us', path: '/contact' },
-        { name: 'FAQs', path: '/faq' },
-        { name: 'Privacy Policy', path: '/privacy' },
-        { name: 'Terms of Service', path: '/terms' },
-      ],
-    },
-    {
-      title: 'Contact',
-      links: [
-        { name: 'info@arionextech.com', path: 'mailto:info@arionextech.com' },
-        { name: '+1 (555) 123-4567', path: 'tel:+15551234567' },
-        { name: '123 Tech Street, Jabalpur, MP 482001', path: 'https://maps.google.com' },
+        { name: 'FAQs', path: '/faqs' },
+        { name: 'Help Center', path: '/help' },
+        { name: 'Documentation', path: '/docs' },
+        { name: 'API Reference', path: '/api' },
       ],
     },
   ];
@@ -88,19 +98,13 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400 text-sm mb-4 md:mb-0">
-            © {currentYear} ArionexTech. All rights reserved.
+          <p className="text-gray-400 mb-4 md:mb-0">
+            {currentYear} ArionexTech. All rights reserved.
           </p>
-          <div className="flex space-x-6">
-            <Link to="/privacy" className="text-gray-400 hover:text-primary text-sm transition-colors duration-300">
-              Privacy Policy
-            </Link>
-            <Link to="/terms" className="text-gray-400 hover:text-primary text-sm transition-colors duration-300">
-              Terms of Service
-            </Link>
-            <Link to="/cookies" className="text-gray-400 hover:text-primary text-sm transition-colors duration-300">
-              Cookie Policy
-            </Link>
+          <div className="flex space-x-6 text-sm text-gray-400">
+            <Link to="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link to="/terms-of-service" className="hover:text-white transition-colors">Terms of Service</Link>
+            <Link to="/faqs" className="hover:text-white transition-colors">FAQs</Link>
           </div>
         </div>
       </div>
