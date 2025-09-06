@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { Link, useLocation } from 'react-router-dom';
+import Logo from '@/assets/arionextech_Logo.png';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,11 +27,16 @@ const Navbar = () => {
     <header className={`fixed w-full z-50 transition-all duration-300 ${
       scrolled ? 'bg-white/90 backdrop-blur-sm shadow-md' : 'bg-transparent'
     }`}>
-      <div className="container mx-auto px-4 py-4">
+      <div className="container mx-auto px-4 py-6">
         <div className="flex items-center justify-between">
-          <Link to="/" className="flex items-center space-x-2">
-            <span className="text-2xl font-bold text-primary">Arionex</span>
-            <span className="text-2xl font-bold text-gray-800">Tech</span>
+          <Link to="/" className="flex items-center">
+            <img
+              src={Logo}
+              alt="ArionexTech Logo"
+              className="h-8 w-auto select-none"
+              loading="eager"
+              decoding="async"
+            />
           </Link>
 
           <nav className="hidden md:flex items-center space-x-8">

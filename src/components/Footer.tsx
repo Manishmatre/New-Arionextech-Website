@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from 'react-icons/fa';
+import Logo from '@/assets/arionextech_Logo.png';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -45,9 +46,8 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <div className="col-span-1">
-            <div className="flex items-center space-x-2 mb-4">
-              <span className="text-2xl font-bold text-primary">Arionex</span>
-              <span className="text-2xl font-bold">Tech</span>
+            <div className="flex items-center mb-4">
+              <img src={Logo} alt="ArionexTech Logo" className="h-8 w-auto select-none" loading="eager" decoding="async" />
             </div>
             <p className="text-gray-400 mb-6">
               Empowering businesses with innovative software solutions and cutting-edge technology.

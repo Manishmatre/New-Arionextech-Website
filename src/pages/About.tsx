@@ -1,17 +1,13 @@
 import { motion } from 'framer-motion';
-import { BuildingOfficeIcon, LightBulbIcon, UserGroupIcon } from '@heroicons/react/24/outline';
+import { BuildingOfficeIcon, LightBulbIcon, UserGroupIcon, ClockIcon, GlobeAltIcon } from '@heroicons/react/24/outline';
 
 const About = () => {
-  const fadeIn = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { duration: 0.6 } },
-  };
 
   const stats = [
-    { label: 'Years Experience', value: '5+' },
-    { label: 'Projects Completed', value: '50+' },
-    { label: 'Happy Clients', value: '40+' },
-    { label: 'Team Members', value: '15+' },
+    { label: 'Years Experience', value: '5+', icon: ClockIcon },
+    { label: 'Projects Completed', value: '50+', icon: BuildingOfficeIcon },
+    { label: 'Happy Clients', value: '40+', icon: UserGroupIcon },
+    { label: 'Global Reach', value: '10+', icon: GlobeAltIcon },
   ];
 
   const values = [
@@ -62,19 +58,25 @@ const About = () => {
       <section className="py-12 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            {stats.map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="p-6"
-              >
-                <p className="text-4xl font-bold text-primary mb-2">{stat.value}</p>
-                <p className="text-gray-600">{stat.label}</p>
-              </motion.div>
-            ))}
+            {stats.map((stat, index) => {
+              const IconComponent = stat.icon;
+              return (
+                <motion.div
+                  key={stat.label}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="p-6"
+                >
+                  <div className="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-lg mx-auto mb-4">
+                    <IconComponent className="h-6 w-6 text-primary" />
+                  </div>
+                  <p className="text-4xl font-bold text-primary mb-2">{stat.value}</p>
+                  <p className="text-gray-600">{stat.label}</p>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -180,21 +182,26 @@ const About = () => {
           </motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[1, 2, 3, 4].map((item, index) => (
+            {[
+              { name: 'Manish Matre', role: 'CEO & Founder', image: 'CEO' },
+              { name: 'Priya Sharma', role: 'CTO', image: 'CTO' },
+              { name: 'Rahul Singh', role: 'Lead Developer', image: 'Developer' },
+              { name: 'Anjali Patel', role: 'UI/UX Designer', image: 'Designer' }
+            ].map((member, index) => (
               <motion.div
-                key={index}
+                key={member.name}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
               >
-                <div className="h-64 bg-gray-200 flex items-center justify-center">
-                  <span className="text-gray-400">Team Member {index + 1}</span>
+                <div className="h-64 bg-gradient-to-br from-primary/20 to-primary/40 flex items-center justify-center">
+                  <span className="text-primary font-semibold text-lg">{member.image}</span>
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-1">Team Member {index + 1}</h3>
-                  <p className="text-primary font-medium">Position/Role</p>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-1">{member.name}</h3>
+                  <p className="text-primary font-medium">{member.role}</p>
                 </div>
               </motion.div>
             ))}

@@ -1,28 +1,70 @@
 import { motion } from 'framer-motion';
-import { ArrowTopRightOnSquareIcon, ClockIcon, CloudArrowUpIcon, DocumentTextIcon, ShieldCheckIcon } from '@heroicons/react/24/outline';
+import { 
+  ShoppingCartIcon, 
+  AcademicCapIcon, 
+  BuildingOfficeIcon,
+  ChartBarIcon,
+  CheckCircleIcon,
+  ArrowTopRightOnSquareIcon, 
+  CloudArrowUpIcon, 
+  ShieldCheckIcon 
+} from '@heroicons/react/24/outline';
 
 const Products = () => {
   const products = [
     {
-      name: 'DentalOS',
-      description: 'Comprehensive practice management software for modern dental clinics. Streamline appointments, patient records, and billing in one platform.',
-      status: 'Coming Soon',
-      features: ['Appointment Scheduling', 'Patient Records', 'Billing & Invoicing', 'Treatment Planning'],
-      icon: <DocumentTextIcon className="h-8 w-8 text-primary" />,
+      name: 'ArionexCRM',
+      description: 'Complete customer relationship management solution designed for modern businesses. Manage leads, customers, and sales pipeline efficiently.',
+      status: 'Live',
+      price: '₹2,999/month',
+      features: ['Lead Management', 'Sales Pipeline', 'Customer Analytics', 'Email Integration', 'Mobile App'],
+      icon: <BuildingOfficeIcon className="h-8 w-8 text-primary" />,
+      category: 'Business Management'
     },
     {
-      name: 'FleetPro',
-      description: 'End-to-end fleet management solution for businesses with vehicle fleets. Track, maintain, and optimize your fleet operations.',
-      status: 'In Development',
-      features: ['Real-time Tracking', 'Maintenance Scheduling', 'Fuel Management', 'Driver Performance'],
+      name: 'EduTrack Pro',
+      description: 'Comprehensive student information system for educational institutions. Streamline admissions, academics, and administration.',
+      status: 'Beta',
+      price: '₹1,999/month',
+      features: ['Student Management', 'Grade Tracking', 'Attendance System', 'Parent Portal', 'Fee Management'],
+      icon: <AcademicCapIcon className="h-8 w-8 text-primary" />,
+      category: 'Education'
+    },
+    {
+      name: 'RetailFlow',
+      description: 'E-commerce and inventory management platform for retail businesses. Manage products, orders, and customers seamlessly.',
+      status: 'Coming Soon',
+      price: '₹3,499/month',
+      features: ['Inventory Management', 'Order Processing', 'Customer Analytics', 'Multi-channel Sales', 'Payment Gateway'],
+      icon: <ShoppingCartIcon className="h-8 w-8 text-primary" />,
+      category: 'E-commerce'
+    },
+    {
+      name: 'CloudSync',
+      description: 'Secure cloud storage and file synchronization solution for businesses. Access your files anywhere, anytime.',
+      status: 'Live',
+      price: '₹999/month',
+      features: ['File Sync', 'Team Collaboration', 'Version Control', 'Security Encryption', 'API Access'],
       icon: <CloudArrowUpIcon className="h-8 w-8 text-primary" />,
+      category: 'Cloud Services'
+    },
+    {
+      name: 'DataViz Analytics',
+      description: 'Business intelligence platform that transforms data into actionable insights with beautiful visualizations.',
+      status: 'Beta',
+      price: '₹4,999/month',
+      features: ['Data Visualization', 'Custom Reports', 'Real-time Analytics', 'Dashboard Builder', 'AI Insights'],
+      icon: <ChartBarIcon className="h-8 w-8 text-primary" />,
+      category: 'Analytics'
     },
     {
       name: 'SecureVault',
-      description: 'Enterprise-grade document management and secure file sharing platform with advanced encryption and access controls.',
+      description: 'Enterprise-grade security solution with advanced threat detection and data protection capabilities.',
       status: 'Coming Soon',
-      features: ['End-to-End Encryption', 'Access Controls', 'Audit Trails', 'Secure Sharing'],
+      price: '₹5,999/month',
+      features: ['Threat Detection', 'Data Encryption', 'Access Control', 'Audit Logs', '24/7 Monitoring'],
       icon: <ShieldCheckIcon className="h-8 w-8 text-primary" />,
+      category: 'Security'
     },
   ];
 
@@ -43,10 +85,10 @@ const Products = () => {
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-xl text-gray-600 max-w-3xl mx-auto"
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-xl text-gray-600 mb-8"
             >
-              Innovative SaaS solutions designed to transform your business operations.
+              Innovative software solutions designed to transform your business operations.
             </motion.p>
           </div>
         </div>
@@ -63,40 +105,58 @@ const Products = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200 hover:shadow-xl transition-all duration-300 flex flex-col"
+                className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group relative overflow-hidden"
               >
-                <div className="p-8 flex-grow">
-                  <div className="flex items-center justify-between mb-6">
-                    <div className="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-lg">
-                      {product.icon}
-                    </div>
-                    <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-yellow-100 text-yellow-800">
-                      <ClockIcon className="h-4 w-4 mr-1" />
-                      {product.status}
-                    </span>
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-3">{product.name}</h3>
-                  <p className="text-gray-600 mb-6">{product.description}</p>
-                  
-                  <div className="mb-6">
-                    <h4 className="font-medium text-gray-900 mb-3">Key Features:</h4>
-                    <ul className="space-y-2">
-                      {product.features.map((feature, i) => (
-                        <li key={i} className="flex items-start">
-                          <svg className="h-5 w-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                          </svg>
-                          <span className="text-gray-600">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                <div className="absolute top-4 right-4">
+                  <span className={`px-3 py-1 rounded-full text-xs font-medium ${
+                    product.status === 'Live' 
+                      ? 'bg-green-100 text-green-800' 
+                      : product.status === 'Beta'
+                      ? 'bg-blue-100 text-blue-800'
+                      : 'bg-yellow-100 text-yellow-800'
+                  }`}>
+                    {product.status}
+                  </span>
                 </div>
                 
-                <div className="px-6 py-4 bg-gray-50 border-t border-gray-100">
-                  <button className="w-full btn btn-outline flex items-center justify-center">
-                    Get Notified
-                    <ArrowTopRightOnSquareIcon className="w-4 h-4 ml-2" />
+                <div className="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-6 group-hover:bg-primary/20 transition-colors">
+                  {product.icon}
+                </div>
+                
+                <div className="mb-2">
+                  <span className="text-xs font-medium text-primary uppercase tracking-wide">{product.category}</span>
+                </div>
+                
+                <h3 className="text-xl font-semibold mb-3 text-gray-900">{product.name}</h3>
+                <p className="text-gray-600 mb-4">{product.description}</p>
+                
+                <div className="mb-4">
+                  <div className="text-2xl font-bold text-primary mb-1">{product.price}</div>
+                  <div className="text-sm text-gray-500">Starting price</div>
+                </div>
+                
+                <div className="space-y-2 mb-6">
+                  {product.features.slice(0, 4).map((feature, idx) => (
+                    <div key={idx} className="flex items-center text-sm text-gray-700">
+                      <CheckCircleIcon className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                      {feature}
+                    </div>
+                  ))}
+                  {product.features.length > 4 && (
+                    <div className="text-sm text-gray-500">+{product.features.length - 4} more features</div>
+                  )}
+                </div>
+                
+                <div className="flex gap-2">
+                  <button className={`flex-1 py-2 px-4 rounded-lg font-medium transition-colors ${
+                    product.status === 'Coming Soon'
+                      ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                      : 'bg-primary text-white hover:bg-primary-dark'
+                  }`} disabled={product.status === 'Coming Soon'}>
+                    {product.status === 'Coming Soon' ? 'Notify Me' : 'Get Started'}
+                  </button>
+                  <button className="p-2 border border-gray-300 rounded-lg hover:border-primary hover:text-primary transition-colors">
+                    <ArrowTopRightOnSquareIcon className="w-5 h-5" />
                   </button>
                 </div>
               </motion.div>
