@@ -9,7 +9,6 @@ import {
   CheckCircleIcon,
   ArrowTopRightOnSquareIcon,
   CurrencyDollarIcon,
-  ChartBarIcon,
   CpuChipIcon,
   CloudIcon,
   DocumentChartBarIcon,
@@ -88,7 +87,7 @@ const AiAnalyticsDashboard: React.FC = () => {
     { metric: '95%', label: 'Prediction Accuracy', icon: <CpuChipIcon className="h-6 w-6" /> },
     { metric: '10x', label: 'Faster Processing', icon: <BoltIcon className="h-6 w-6" /> },
     { metric: '300+', label: 'Automated Insights', icon: <LightBulbIcon className="h-6 w-6" /> },
-    { metric: '50M+', label: 'Data Points/Day', icon: <ChartBarIcon className="h-6 w-6" /> },
+    { metric: '50M+', label: 'Data Points/Day', icon: <DocumentChartBarIcon className="h-6 w-6" /> },
     { metric: '99.9%', label: 'System Uptime', icon: <CheckCircleIcon className="h-6 w-6" /> },
     { metric: '400%', label: 'ROI Increase', icon: <CurrencyDollarIcon className="h-6 w-6" /> }
   ];
