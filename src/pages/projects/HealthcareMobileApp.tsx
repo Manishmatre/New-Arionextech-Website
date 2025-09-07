@@ -15,7 +15,8 @@ import {
   ShieldCheckIcon,
   DocumentTextIcon,
   BellIcon,
-  PlayIcon
+  PlayIcon,
+  ClockIcon
 } from '@heroicons/react/24/outline';
 
 const HealthcareMobileApp: React.FC = () => {
