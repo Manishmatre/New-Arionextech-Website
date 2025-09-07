@@ -10,7 +10,6 @@ import {
   ArrowTopRightOnSquareIcon,
   ClockIcon,
   CurrencyDollarIcon,
-  ChartBarIcon,
   HeartIcon,
   DevicePhoneMobileIcon,
   VideoCameraIcon,

@@ -8,7 +8,6 @@ import {
   StarIcon,
   CheckCircleIcon,
   ArrowTopRightOnSquareIcon,
-  ClockIcon,
   CurrencyDollarIcon,
   ChartBarIcon,
   CpuChipIcon,

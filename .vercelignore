@@ -1,0 +1,22 @@
+# Ignore everything
+*/
+
+# Except these files
+!.gitignore
+!.gitattributes
+!**/*.js
+!**/*.ts
+!**/*.jsx
+!**/*.tsx
+!**/*.json
+!**/*.css
+!**/*.scss
+!**/*.html
+!public/**/*
+!src/**/*
+!vite.config.*
+!tsconfig.*
+!package*.json
+!.vercel
+!.vercelignore
+!.git

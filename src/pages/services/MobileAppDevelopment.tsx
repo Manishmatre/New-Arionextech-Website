@@ -4,7 +4,6 @@ import {
   DevicePhoneMobileIcon,
   CloudArrowUpIcon,
   ShieldCheckIcon,
-  RocketLaunchIcon,
   CheckCircleIcon,
   ArrowRightIcon,
   ClockIcon,
