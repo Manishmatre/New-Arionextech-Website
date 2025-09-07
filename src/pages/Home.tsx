@@ -198,9 +198,9 @@ const Home = () => {
           >
             <source src={bgVideo} type="video/mp4" />
           </video>
-          {/* Enhanced overlay for maximum text readability */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/80 to-black/70"></div>
-          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-black/60"></div>
+          {/* Enhanced overlay for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/40"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-black/30"></div>
           {/* Subtle pattern overlay */}
           <div className="absolute inset-0 bg-grid-white/3"></div>
           <div className="absolute inset-0">
