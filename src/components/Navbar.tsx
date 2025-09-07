@@ -19,7 +19,9 @@ const Navbar = () => {
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
     { name: 'Services', path: '/services' },
+    { name: 'Portfolio', path: '/portfolio' },
     { name: 'Products', path: '/products' },
+    { name: 'Internships', path: '/internships' },
     { name: 'Contact', path: '/contact' },
   ];
 
@@ -27,13 +29,15 @@ const Navbar = () => {
     <header className={`fixed w-full z-50 transition-all duration-300 ${
       scrolled ? 'bg-white/90 backdrop-blur-sm shadow-md' : 'bg-transparent'
     }`}>
-      <div className="container mx-auto px-4 py-6">
+      <div className={`container mx-auto px-4 transition-all duration-300 ${
+        scrolled ? 'py-4' : 'py-6'
+      }`}>
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center">
             <img
               src={Logo}
               alt="ArionexTech Logo"
-              className="h-8 w-auto select-none"
+              className="h-12 w-auto select-none"
               loading="eager"
               decoding="async"
             />
@@ -59,7 +63,7 @@ const Navbar = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-700 hover:text-primary focus:outline-none"
+              className={`${scrolled ? 'text-gray-700 bg-transparent' : 'text-white bg-black/20 backdrop-blur-sm'} hover:text-primary focus:outline-none transition-all duration-300 p-2 rounded-lg`}
               aria-label="Toggle menu"
             >
               {isOpen ? <XMarkIcon className="h-6 w-6" /> : <Bars3Icon className="h-6 w-6" />}
@@ -73,23 +77,28 @@ const Navbar = () => {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              className="md:hidden overflow-hidden"
+              className="md:hidden overflow-hidden bg-white/95 backdrop-blur-sm shadow-lg rounded-lg mt-4"
             >
-              <nav className="flex flex-col space-y-4 py-4">
+              <nav className="flex flex-col space-y-2 p-4">
                 {navLinks.map((link) => (
                   <Link
                     key={link.name}
                     to={link.path}
-                    className={`px-4 py-2 text-base font-medium rounded-lg transition-colors ${
+                    onClick={() => setIsOpen(false)}
+                    className={`px-4 py-3 text-base font-medium rounded-lg transition-colors ${
                       location.pathname === link.path
-                        ? 'bg-primary/10 text-primary'
+                        ? 'bg-primary text-white'
                         : 'text-gray-700 hover:bg-gray-100'
                     }`}
                   >
                     {link.name}
                   </Link>
                 ))}
-                <Link to="/contact" className="btn btn-primary w-full mt-2">
+                <Link 
+                  to="/contact" 
+                  onClick={() => setIsOpen(false)}
+                  className="btn btn-primary w-full mt-2"
+                >
                   Get Started
                 </Link>
               </nav>

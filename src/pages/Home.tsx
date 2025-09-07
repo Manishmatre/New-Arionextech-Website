@@ -1,7 +1,8 @@
 import { motion } from 'framer-motion';
 import type { Variants } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRightIcon, CodeBracketIcon, CloudArrowUpIcon, CpuChipIcon, StarIcon, CheckCircleIcon, ClockIcon, PhoneIcon, ChatBubbleLeftRightIcon, DocumentTextIcon, PresentationChartLineIcon, CogIcon, RocketLaunchIcon } from '@heroicons/react/24/outline';
+import { ArrowRightIcon, CodeBracketIcon, CloudArrowUpIcon, CpuChipIcon, StarIcon, CheckCircleIcon, ClockIcon, PhoneIcon, ChatBubbleLeftRightIcon, DocumentTextIcon, PresentationChartLineIcon, CogIcon, RocketLaunchIcon, DevicePhoneMobileIcon, SparklesIcon, PlayIcon } from '@heroicons/react/24/outline';
+import bgVideo from '../assets/arionextech_bg-Video.mp4';
 
 const Home = () => {
   const fadeInUp: Variants = {
@@ -32,18 +33,18 @@ const Home = () => {
   const features = [
     {
       icon: <CodeBracketIcon className="h-8 w-8 text-primary" />,
-      title: 'Custom Software',
-      description: 'Tailored solutions designed specifically for your business needs.',
+      title: 'Expert Development Team',
+      description: '5+ years of experience with skilled developers who deliver high-quality, scalable solutions using the latest technologies.',
     },
     {
       icon: <CloudArrowUpIcon className="h-8 w-8 text-primary" />,
-      title: 'Cloud Solutions',
-      description: 'Scalable and secure cloud infrastructure for your business.',
+      title: 'Proven Track Record',
+      description: '50+ successful projects delivered on time and within budget, with 40+ satisfied clients across various industries.',
     },
     {
       icon: <CpuChipIcon className="h-8 w-8 text-primary" />,
-      title: 'AI & ML',
-      description: 'Leverage the power of artificial intelligence and machine learning.',
+      title: '24/7 Support & Maintenance',
+      description: 'Round-the-clock technical support and ongoing maintenance to ensure your software runs smoothly at all times.',
     },
   ];
 
@@ -105,6 +106,39 @@ const Home = () => {
     }
   ];
 
+  const topServices = [
+    {
+      icon: <CodeBracketIcon className="h-12 w-12 text-white" />,
+      title: 'Web Development',
+      description: 'Custom websites and web applications built with modern technologies for optimal performance.',
+      features: ['React/Next.js', 'Node.js Backend', 'Responsive Design', 'SEO Optimized'],
+      price: 'Starting from ₹9,999',
+      link: '/services/web-development',
+      gradient: 'from-blue-600 to-blue-800',
+      popular: true
+    },
+    {
+      icon: <DevicePhoneMobileIcon className="h-12 w-12 text-white" />,
+      title: 'Mobile Apps',
+      description: 'Native and cross-platform mobile applications for iOS and Android platforms.',
+      features: ['iOS & Android', 'React Native', 'Flutter', 'App Store Ready'],
+      price: 'Starting from ₹24,999',
+      link: '/services/mobile-app-development',
+      gradient: 'from-purple-600 to-purple-800',
+      popular: false
+    },
+    {
+      icon: <SparklesIcon className="h-12 w-12 text-white" />,
+      title: 'Custom Software',
+      description: 'Tailored software solutions designed specifically for your unique business needs.',
+      features: ['Custom Development', 'Enterprise Solutions', 'API Integration', 'Scalable Architecture'],
+      price: 'Starting from ₹49,999',
+      link: '/services/custom-software',
+      gradient: 'from-emerald-600 to-emerald-800',
+      popular: false
+    }
+  ];
+
   const stats = [
     { number: '50+', label: 'Projects Completed', icon: <CheckCircleIcon className="h-6 w-6" /> },
     { number: '40+', label: 'Happy Clients', icon: <StarIcon className="h-6 w-6" /> },
@@ -114,55 +148,288 @@ const Home = () => {
 
   return (
     <div className="pt-20">
-      {/* Hero Section */}
-      <section className="relative overflow-hidden hero-gradient text-white">
+      {/* Hero Section with Background Video */}
+      <section className="relative overflow-hidden min-h-screen flex items-center text-white">
+        {/* Background Video */}
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-b from-primary/80 to-primary/90"></div>
-          <div className="absolute inset-0 bg-grid-white/5"></div>
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="w-full h-full object-cover"
+          >
+            <source src={bgVideo} type="video/mp4" />
+          </video>
+          {/* Enhanced overlay for maximum text readability */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/80 to-black/70"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-black/60"></div>
+          {/* Subtle pattern overlay */}
+          <div className="absolute inset-0 bg-grid-white/3"></div>
+          <div className="absolute inset-0">
+            <div className="absolute top-20 left-20 w-72 h-72 bg-white/5 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute bottom-20 right-20 w-96 h-96 bg-white/3 rounded-full blur-3xl animate-pulse delay-1000"></div>
+          </div>
         </div>
         
-        <div className="relative z-10 section">
+        {/* Hero Content */}
+        <div className="relative z-10 w-full">
           <div className="container mx-auto px-4">
             <motion.div
               initial="hidden"
               animate="visible"
               variants={staggerContainer}
-              className="max-w-4xl mx-auto text-center py-20 md:py-32"
+              className="max-w-5xl mx-auto text-center py-20"
             >
-              <motion.h1 
-                variants={fadeInUp}
-                className="text-4xl md:text-6xl font-bold mb-6 leading-tight"
-              >
-                Empowering Ideas, <span className="text-yellow-300">Building Futures</span>
-              </motion.h1>
-              
-              <motion.p 
-                variants={fadeInUp}
-                className="text-xl md:text-2xl text-gray-100 mb-10 max-w-3xl mx-auto"
-              >
-                We deliver innovative software solutions that drive business growth and digital transformation.
-              </motion.p>
-              
+              {/* Badge */}
               <motion.div 
                 variants={fadeInUp}
-                className="flex flex-col sm:flex-row justify-center gap-4"
+                className="inline-flex items-center bg-white/10 backdrop-blur-sm text-white px-6 py-3 rounded-full text-sm font-medium mb-8 border border-white/20"
+              >
+                <SparklesIcon className="h-4 w-4 mr-2 text-blue-300" />
+                Leading Software Development Company
+                <div className="ml-2 w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+              </motion.div>
+
+              {/* Main Heading */}
+              <motion.h1 
+                variants={fadeInUp}
+                className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight"
+              >
+                <motion.span 
+                  className="block text-white"
+                  initial={{ opacity: 0, x: -50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8, delay: 0.3 }}
+                >
+                  Transform Your
+                </motion.span>
+                <motion.span 
+                  className="block bg-gradient-to-r from-blue-400 via-primary to-blue-600 bg-clip-text text-transparent"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.8, delay: 0.6, type: "spring", stiffness: 100 }}
+                >
+                  Digital Vision
+                </motion.span>
+                <motion.span 
+                  className="block text-white text-3xl md:text-4xl lg:text-5xl mt-2"
+                  initial={{ opacity: 0, x: 50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8, delay: 0.9 }}
+                >
+                  Into Reality
+                </motion.span>
+              </motion.h1>
+              
+              {/* Subtitle */}
+              <motion.p 
+                variants={fadeInUp}
+                className="text-lg md:text-xl lg:text-2xl text-gray-200 mb-12 max-w-4xl mx-auto leading-relaxed"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 1.2 }}
+              >
+                We craft cutting-edge software solutions that 
+                <span className="text-blue-300 font-semibold"> revolutionize businesses</span> and 
+                <span className="text-blue-400 font-semibold"> accelerate growth</span> in the digital age.
+              </motion.p>
+
+              {/* Key Features */}
+              <motion.div 
+                variants={fadeInUp}
+                className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 max-w-4xl mx-auto"
+              >
+                {[
+                  { icon: <CodeBracketIcon className="h-6 w-6" />, text: "Custom Development" },
+                  { icon: <CpuChipIcon className="h-6 w-6" />, text: "AI-Powered Solutions" },
+                  { icon: <CloudArrowUpIcon className="h-6 w-6" />, text: "Cloud-Native Architecture" }
+                ].map((feature, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
+                    className="flex items-center justify-center bg-white/10 backdrop-blur-sm rounded-xl px-4 py-3 border border-white/20"
+                  >
+                    <span className="text-blue-300 mr-3">{feature.icon}</span>
+                    <span className="text-white font-medium">{feature.text}</span>
+                  </motion.div>
+                ))}
+              </motion.div>
+              
+              {/* CTA Buttons */}
+              <motion.div 
+                variants={fadeInUp}
+                className="flex flex-col sm:flex-row justify-center gap-4 mb-12"
               >
                 <Link
                   to="/contact"
-                  className="btn btn-primary inline-flex items-center justify-center"
+                  className="group relative bg-gradient-to-r from-primary to-primary-dark text-white font-semibold px-6 py-3 rounded-lg text-base hover:from-blue-500 hover:to-primary transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-primary/25 inline-flex items-center justify-center"
                 >
-                  Get Started
-                  <ArrowRightIcon className="ml-2 h-5 w-5" />
+                  <RocketLaunchIcon className="mr-2 h-5 w-5" />
+                  Start Your Project
+                  <ArrowRightIcon className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-primary rounded-lg blur opacity-30 group-hover:opacity-50 transition-opacity duration-300 -z-10"></div>
                 </Link>
+                
                 <Link
-                  to="/services"
-                  className="btn bg-white text-primary hover:bg-gray-100"
+                  to="/portfolio"
+                  className="group bg-white/10 backdrop-blur-sm text-white border-2 border-white/30 font-medium px-6 py-3 rounded-lg text-base hover:bg-white/20 hover:border-white/50 transform hover:scale-105 transition-all duration-300 inline-flex items-center justify-center"
                 >
-                  Our Services
+                  <PlayIcon className="mr-2 h-5 w-5" />
+                  View Our Work
+                  <ArrowRightIcon className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
                 </Link>
+              </motion.div>
+
+              {/* Stats Row */}
+              <motion.div 
+                variants={fadeInUp}
+                className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 max-w-4xl mx-auto mb-16"
+              >
+                {[
+                  { number: '50+', label: 'Projects Delivered' },
+                  { number: '40+', label: 'Happy Clients' },
+                  { number: '5+', label: 'Years Experience' },
+                  { number: '24/7', label: 'Support' }
+                ].map((stat, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.6, delay: 1.2 + index * 0.1 }}
+                    className="text-center px-2"
+                  >
+                    <div className="text-2xl md:text-3xl font-bold text-blue-300 mb-2">{stat.number}</div>
+                    <div className="text-xs md:text-sm text-gray-300 uppercase tracking-wide leading-tight">{stat.label}</div>
+                  </motion.div>
+                ))}
               </motion.div>
             </motion.div>
           </div>
+        </div>
+
+        {/* Scroll Indicator */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 2 }}
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10"
+        >
+          <div className="flex flex-col items-center text-white/70">
+            <span className="text-sm mb-2 uppercase tracking-wide">Scroll to explore</span>
+            <motion.div
+              animate={{ y: [0, 8, 0] }}
+              transition={{ duration: 2, repeat: Infinity }}
+              className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center"
+            >
+              <motion.div
+                animate={{ y: [0, 12, 0] }}
+                transition={{ duration: 2, repeat: Infinity }}
+                className="w-1 h-3 bg-white/50 rounded-full mt-2"
+              />
+            </motion.div>
+          </div>
+        </motion.div>
+      </section>
+
+      {/* Top Services Section */}
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <div className="inline-flex items-center bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-4">
+              <SparklesIcon className="h-4 w-4 mr-2" />
+              Our Top Services
+            </div>
+            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
+              <span className="bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">Flagship</span> Solutions
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Our most popular and proven services that drive business success
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            {topServices.map((service, index) => (
+              <motion.div
+                key={service.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="relative group"
+              >
+                {service.popular && (
+                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
+                    <div className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-4 py-1 rounded-full text-sm font-medium shadow-lg">
+                      Most Popular
+                    </div>
+                  </div>
+                )}
+                
+                <div className={`relative overflow-hidden rounded-2xl bg-gradient-to-br ${service.gradient} p-8 text-white h-full transform group-hover:scale-105 transition-all duration-300 shadow-xl group-hover:shadow-2xl`}>
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16"></div>
+                  <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/5 rounded-full -ml-12 -mb-12"></div>
+                  
+                  <div className="relative z-10">
+                    <div className="w-20 h-20 bg-white/20 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-white/30 transition-colors duration-300">
+                      {service.icon}
+                    </div>
+                    
+                    <h3 className="text-2xl font-bold mb-3">{service.title}</h3>
+                    <p className="text-white/90 mb-6 leading-relaxed">{service.description}</p>
+                    
+                    <div className="space-y-2 mb-6">
+                      {service.features.map((feature, featureIndex) => (
+                        <div key={featureIndex} className="flex items-center text-sm text-white/80">
+                          <CheckCircleIcon className="h-4 w-4 mr-2 text-white/60" />
+                          {feature}
+                        </div>
+                      ))}
+                    </div>
+                    
+                    <div className="border-t border-white/20 pt-6">
+                      <div className="flex items-center justify-between mb-4">
+                        <span className="text-lg font-semibold">{service.price}</span>
+                        <div className="text-xs text-white/60">Starting Price</div>
+                      </div>
+                      
+                      <Link
+                        to={service.link}
+                        className="w-full bg-white text-gray-900 hover:bg-gray-100 font-semibold py-3 px-6 rounded-xl transition-colors duration-300 inline-flex items-center justify-center group"
+                      >
+                        Learn More
+                        <ArrowRightIcon className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+          
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="text-center mt-12"
+          >
+            <Link
+              to="/services"
+              className="inline-flex items-center text-primary hover:text-primary-dark font-semibold text-lg group"
+            >
+              View All Services
+              <ArrowRightIcon className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
+            </Link>
+          </motion.div>
         </div>
       </section>
 
@@ -193,11 +460,15 @@ const Home = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
+            <div className="inline-flex items-center bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-4">
+              <StarIcon className="h-4 w-4 mr-2" />
+              Why Choose Us
+            </div>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Why Choose ArionexTech?
+              Your Trusted <span className="bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">Technology</span> Partner
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              We combine cutting-edge technology with industry expertise to deliver exceptional results.
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              We don't just build software - we build lasting partnerships. Here's what sets ArionexTech apart from the competition.
             </p>
           </motion.div>
 
@@ -257,7 +528,7 @@ const Home = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Our Proven Workflow
+              Our <span className="bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">Proven</span> Workflow
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               From concept to launch, we follow a structured process that ensures your project's success.
@@ -308,7 +579,7 @@ const Home = () => {
             className="text-center mt-12"
           >
             <div className="bg-white rounded-xl shadow-lg p-8 max-w-2xl mx-auto">
-              <h3 className="text-xl font-semibold mb-3 text-gray-900">Ready to Start Your Project?</h3>
+              <h3 className="text-xl font-semibold mb-3 text-gray-900">Ready to Start Your <span className="bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">Project</span>?</h3>
               <p className="text-gray-600 mb-6">Get a free consultation and project estimate within 24 hours.</p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link to="/contact" className="btn btn-primary inline-flex items-center justify-center">
@@ -336,7 +607,7 @@ const Home = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              What Our Clients Say
+              What Our <span className="bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">Clients</span> Say
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Don't just take our word for it. Here's what our satisfied clients have to say about working with ArionexTech.
@@ -414,7 +685,7 @@ const Home = () => {
               Limited Time: Free Project Analysis Worth ₹25,000
             </div>
             <h2 className="text-3xl md:text-5xl font-bold mb-6">
-              Ready to <span className="text-yellow-300">10X</span> Your Business?
+              Ready to <span className="bg-gradient-to-r from-yellow-300 to-yellow-400 bg-clip-text text-transparent">10X</span> Your <span className="bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent">Business</span>?
             </h2>
             <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
               Join 40+ successful businesses who transformed their operations with our custom software solutions. 

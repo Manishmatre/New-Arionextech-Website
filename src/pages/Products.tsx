@@ -69,28 +69,27 @@ const Products = () => {
   ];
 
   return (
-    <div className="pt-32 pb-20">
+    <div className="pt-20">
       {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden bg-gray-50">
+      <section className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white py-20">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <motion.h1 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
-            >
-              Our Products
-            </motion.h1>
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-xl text-gray-600 mb-8"
-            >
-              Innovative software solutions designed to transform your business operations.
-            </motion.p>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center max-w-4xl mx-auto"
+          >
+            <div className="inline-flex items-center bg-white/10 text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
+              <ShoppingCartIcon className="h-4 w-4 mr-2" />
+              Our Solutions
+            </div>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+              Our <span className="bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent">Products</span>
+            </h1>
+            <p className="text-xl text-white/90 mb-8 leading-relaxed">
+              Innovative software solutions designed to transform your business operations. Ready-to-use products that drive growth and efficiency.
+            </p>
+          </motion.div>
         </div>
       </section>
 

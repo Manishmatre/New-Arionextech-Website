@@ -3,9 +3,12 @@ import { AnimatePresence } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
+import CustomCursor from './components/CustomCursor';
+import FloatingButtons from './components/FloatingButtons';
 import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
+import Portfolio from './pages/Portfolio';
 import Products from './pages/Products';
 import Contact from './pages/Contact';
 import Careers from './pages/Careers';
@@ -25,12 +28,15 @@ import DigitalMarketing from './pages/services/DigitalMarketing';
 import GraphicDesign from './pages/services/GraphicDesign';
 import StaffAugmentation from './pages/services/StaffAugmentation';
 import CustomSoftware from './pages/services/CustomSoftware';
+import Internships from './pages/Internships';
 import NotFound from './pages/NotFound';
 
 function App() {
   return (
     <div className="min-h-screen flex flex-col">
+      <CustomCursor />
       <ScrollToTop />
+      <FloatingButtons />
       <Navbar />
       <main className="flex-grow">
         <AnimatePresence mode="wait">
@@ -38,6 +44,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
+            <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/services/web-development" element={<WebDevelopment />} />
             <Route path="/services/mobile-app-development" element={<MobileAppDevelopment />} />
             <Route path="/services/cloud-solutions" element={<CloudSolutions />} />
@@ -51,6 +58,7 @@ function App() {
             <Route path="/services/staff-augmentation" element={<StaffAugmentation />} />
             <Route path="/services/custom-software" element={<CustomSoftware />} />
             <Route path="/products" element={<Products />} />
+            <Route path="/internships" element={<Internships />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/faqs" element={<FAQs />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />

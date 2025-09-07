@@ -216,7 +216,7 @@ const GraphicDesign = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Design Tools We Master
+              <span className="bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">Design Tools</span> We Master
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Professional design software for creating exceptional visual content.
@@ -253,7 +253,7 @@ const GraphicDesign = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Design Services We Offer
+              <span className="bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">Design Services</span> We Offer
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Comprehensive graphic design solutions for all your visual needs.
@@ -292,7 +292,7 @@ const GraphicDesign = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Design Categories
+              <span className="bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">Design</span> Categories
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Specialized design services for different business needs.
@@ -341,7 +341,7 @@ const GraphicDesign = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Design Packages
+              <span className="bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">Design</span> Packages
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Choose the design package that fits your brand needs.
@@ -405,7 +405,7 @@ const GraphicDesign = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Design Success Stories
+              <span className="bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">Design Success</span> Stories
             </h2>
           </motion.div>
 

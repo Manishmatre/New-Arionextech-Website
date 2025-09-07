@@ -88,28 +88,27 @@ const Services = () => {
   ];
 
   return (
-    <div className="pt-32 pb-20">
+    <div className="pt-20">
       {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden bg-gray-50">
+      <section className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white py-20">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <motion.h1 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
-            >
-              Our Services
-            </motion.h1>
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-xl text-gray-600 max-w-3xl mx-auto"
-            >
-              Comprehensive technology solutions tailored to your business needs.
-            </motion.p>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center max-w-4xl mx-auto"
+          >
+            <div className="inline-flex items-center bg-white/10 text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
+              <ServerStackIcon className="h-4 w-4 mr-2" />
+              What We Offer
+            </div>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+              Our <span className="bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent">Services</span>
+            </h1>
+            <p className="text-xl text-white/90 mb-8 leading-relaxed">
+              Comprehensive technology solutions tailored to your business needs. From web development to AI solutions, we deliver excellence.
+            </p>
+          </motion.div>
         </div>
       </section>
 
@@ -156,7 +155,7 @@ const Services = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Service Packages
+              <span className="bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">Service</span> Packages
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Choose the perfect package for your business needs.
@@ -269,7 +268,7 @@ const Services = () => {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Ready to start your project?
+              Ready to start your <span className="bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent">project</span>?
             </h2>
             <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
               Let's discuss how we can help you achieve your business goals with our custom solutions.

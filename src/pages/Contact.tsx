@@ -81,28 +81,27 @@ const Contact = () => {
   ];
 
   return (
-    <div className="pt-32 pb-20">
+    <div className="pt-20">
       {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden bg-gray-50">
+      <section className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white py-20">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <motion.h1 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
-            >
-              Get in Touch
-            </motion.h1>
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-xl text-gray-600 max-w-3xl mx-auto"
-            >
-              Have questions or want to discuss a project? We'd love to hear from you.
-            </motion.p>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center max-w-4xl mx-auto"
+          >
+            <div className="inline-flex items-center bg-white/10 text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
+              <EnvelopeIcon className="h-4 w-4 mr-2" />
+              Let's Connect
+            </div>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+              Get in <span className="bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent">Touch</span>
+            </h1>
+            <p className="text-xl text-white/90 mb-8 leading-relaxed">
+              Have questions or want to discuss a project? We'd love to hear from you. Let's build something amazing together.
+            </p>
+          </motion.div>
         </div>
       </section>
 
@@ -146,7 +145,7 @@ const Contact = () => {
                       onChange={handleChange}
                       required
                       className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200"
-                      placeholder="John Doe"
+                      placeholder="your name"
                     />
                   </div>
                   <div>

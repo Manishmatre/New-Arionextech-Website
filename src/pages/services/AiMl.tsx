@@ -214,7 +214,7 @@ const AiMl = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              AI Technologies We Use
+              <span className="bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">AI Technologies</span> We Use
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Cutting-edge tools and frameworks for building intelligent solutions.
@@ -251,7 +251,7 @@ const AiMl = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              AI Capabilities We Deliver
+              <span className="bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">AI Capabilities</span> We Deliver
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Comprehensive AI solutions that transform how your business operates.
@@ -290,7 +290,7 @@ const AiMl = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              AI Use Cases We Build
+              <span className="bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">AI Use Cases</span> We Build
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Real-world applications that deliver measurable business value.
@@ -339,7 +339,7 @@ const AiMl = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              AI Development Packages
+              <span className="bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">AI Development</span> Packages
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Choose the AI solution that fits your business needs and budget.
@@ -403,7 +403,7 @@ const AiMl = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              AI Success Stories
+              <span className="bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">AI Success</span> Stories
             </h2>
           </motion.div>
 

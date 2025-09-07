@@ -215,7 +215,7 @@ const StaffAugmentation = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Available Skills & Expertise
+              Available <span className="bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">Skills & Expertise</span>
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Access to a diverse pool of skilled professionals across various technologies.
@@ -252,7 +252,7 @@ const StaffAugmentation = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Why Choose Our Staff Augmentation?
+              Why Choose Our <span className="bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">Staff Augmentation</span>?
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Benefits that make us the preferred choice for team expansion.
@@ -291,7 +291,7 @@ const StaffAugmentation = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Popular Roles We Fill
+              <span className="bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">Popular Roles</span> We Fill
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Most in-demand technical roles for modern development teams.
@@ -340,7 +340,7 @@ const StaffAugmentation = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Flexible Engagement Models
+              <span className="bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">Flexible</span> Engagement Models
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Choose the engagement model that best fits your project needs.
@@ -404,7 +404,7 @@ const StaffAugmentation = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Client Success Stories
+              <span className="bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">Client Success</span> Stories
             </h2>
           </motion.div>
 
@@ -449,7 +449,7 @@ const StaffAugmentation = () => {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Ready to Scale Your Team?
+              Ready to <span className="bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent">Scale Your Team</span>?
             </h2>
             <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
               Get access to skilled professionals who can start contributing from day one.

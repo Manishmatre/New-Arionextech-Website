@@ -214,7 +214,7 @@ const SeoBacklinks = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              SEO Tools We Use
+              <span className="bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">SEO Tools</span> We Use
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Professional SEO tools for comprehensive analysis and optimization.
@@ -403,7 +403,7 @@ const SeoBacklinks = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              SEO Success Stories
+              <span className="bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">SEO Success</span> Stories
             </h2>
           </motion.div>
 
@@ -448,7 +448,7 @@ const SeoBacklinks = () => {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Ready to Dominate Search Results?
+              Ready to <span className="bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent">Boost Your Rankings</span>?
             </h2>
             <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
               Get a free SEO audit and discover how to improve your search rankings.

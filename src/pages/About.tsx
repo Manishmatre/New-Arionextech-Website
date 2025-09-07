@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { BuildingOfficeIcon, LightBulbIcon, UserGroupIcon, ClockIcon, GlobeAltIcon } from '@heroicons/react/24/outline';
+import { FaLinkedin, FaTwitter, FaGithub, FaInstagram } from 'react-icons/fa';
 
 const About = () => {
 
@@ -29,28 +30,27 @@ const About = () => {
   ];
 
   return (
-    <div className="pt-32 pb-20">
+    <div className="pt-20">
       {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden">
+      <section className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white py-20">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <motion.h1 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
-            >
-              About ArionexTech
-            </motion.h1>
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-xl text-gray-600 max-w-3xl mx-auto"
-            >
-              Empowering businesses through innovative technology solutions since 2018.
-            </motion.p>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center max-w-4xl mx-auto"
+          >
+            <div className="inline-flex items-center bg-white/10 text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
+              <UserGroupIcon className="h-4 w-4 mr-2" />
+              Our Story
+            </div>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
+              About <span className="bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent">ArionexTech</span>
+            </h2>
+            <p className="text-xl text-white/90 mb-8 leading-relaxed">
+              Empowering businesses through innovative technology solutions since 2018. We combine expertise, innovation, and dedication to deliver exceptional results.
+            </p>
+          </motion.div>
         </div>
       </section>
 
@@ -183,10 +183,46 @@ const About = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { name: 'Manish Matre', role: 'CEO & Founder', image: 'CEO' },
-              { name: 'Priya Sharma', role: 'CTO', image: 'CTO' },
-              { name: 'Rahul Singh', role: 'Lead Developer', image: 'Developer' },
-              { name: 'Anjali Patel', role: 'UI/UX Designer', image: 'Designer' }
+              { 
+                name: 'Manish Matre', 
+                role: 'CEO & Founder', 
+                image: 'CEO',
+                social: {
+                  linkedin: 'https://linkedin.com/in/manishmatre',
+                  twitter: 'https://twitter.com/manishmatre',
+                  github: 'https://github.com/manishmatre'
+                }
+              },
+              { 
+                name: 'Priya Sharma', 
+                role: 'CTO', 
+                image: 'CTO',
+                social: {
+                  linkedin: 'https://linkedin.com/in/priyasharma',
+                  twitter: 'https://twitter.com/priyasharma',
+                  github: 'https://github.com/priyasharma'
+                }
+              },
+              { 
+                name: 'Rahul Singh', 
+                role: 'Lead Developer', 
+                image: 'Developer',
+                social: {
+                  linkedin: 'https://linkedin.com/in/rahulsingh',
+                  github: 'https://github.com/rahulsingh',
+                  instagram: 'https://instagram.com/rahulsingh'
+                }
+              },
+              { 
+                name: 'Anjali Patel', 
+                role: 'UI/UX Designer', 
+                image: 'Designer',
+                social: {
+                  linkedin: 'https://linkedin.com/in/anjalipatel',
+                  instagram: 'https://instagram.com/anjalipatel',
+                  twitter: 'https://twitter.com/anjalipatel'
+                }
+              }
             ].map((member, index) => (
               <motion.div
                 key={member.name}
@@ -201,7 +237,51 @@ const About = () => {
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-gray-900 mb-1">{member.name}</h3>
-                  <p className="text-primary font-medium">{member.role}</p>
+                  <p className="text-primary font-medium mb-4">{member.role}</p>
+                  
+                  {/* Social Links */}
+                  <div className="flex justify-start space-x-3">
+                    {member.social.linkedin && (
+                      <a
+                        href={member.social.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-8 h-8 bg-blue-600 hover:bg-blue-700 text-white rounded-full flex items-center justify-center transition-colors duration-300"
+                      >
+                        <FaLinkedin className="h-4 w-4" />
+                      </a>
+                    )}
+                    {member.social.twitter && (
+                      <a
+                        href={member.social.twitter}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-8 h-8 bg-blue-400 hover:bg-blue-500 text-white rounded-full flex items-center justify-center transition-colors duration-300"
+                      >
+                        <FaTwitter className="h-4 w-4" />
+                      </a>
+                    )}
+                    {member.social.github && (
+                      <a
+                        href={member.social.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-8 h-8 bg-gray-800 hover:bg-gray-900 text-white rounded-full flex items-center justify-center transition-colors duration-300"
+                      >
+                        <FaGithub className="h-4 w-4" />
+                      </a>
+                    )}
+                    {member.social.instagram && (
+                      <a
+                        href={member.social.instagram}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white rounded-full flex items-center justify-center transition-colors duration-300"
+                      >
+                        <FaInstagram className="h-4 w-4" />
+                      </a>
+                    )}
+                  </div>
                 </div>
               </motion.div>
             ))}

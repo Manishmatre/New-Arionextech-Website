@@ -215,7 +215,7 @@ const UiUxDesign = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Design Tools We Master
+              <span className="bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">Design Tools</span> We Master
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Professional design tools for creating exceptional user experiences.
@@ -252,7 +252,7 @@ const UiUxDesign = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Our Design Process
+              Our <span className="bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">Design</span> Process
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Comprehensive design services that put users at the center of everything.
@@ -291,7 +291,7 @@ const UiUxDesign = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Design Services We Offer
+              <span className="bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">Design Services</span> We Offer
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Comprehensive design solutions for all your digital needs.
@@ -340,7 +340,7 @@ const UiUxDesign = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Design Packages
+              <span className="bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">Design</span> Packages
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Choose the design package that fits your project needs.
@@ -404,7 +404,7 @@ const UiUxDesign = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Design Success Stories
+              <span className="bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">Design Success</span> Stories
             </h2>
           </motion.div>
 
@@ -449,7 +449,7 @@ const UiUxDesign = () => {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Ready to Create Amazing Designs?
+              Ready to Create <span className="bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent">Amazing Designs</span>?
             </h2>
             <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
               Let's discuss your design needs and create experiences that your users will love.

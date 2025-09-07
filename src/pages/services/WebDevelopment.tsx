@@ -215,7 +215,7 @@ const WebDevelopment = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              What Makes Our Web Development Special?
+              What Makes Our <span className="bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">Web Development</span> Special?
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               We combine cutting-edge technology with proven methodologies to deliver exceptional results.
@@ -254,7 +254,7 @@ const WebDevelopment = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Technologies We Use
+              <span className="bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">Technologies</span> We Use
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               We work with the latest and most reliable technologies to ensure your project's success.
@@ -291,7 +291,7 @@ const WebDevelopment = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Our Development Process
+              Our <span className="bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">Development</span> Process
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               A proven methodology that ensures quality delivery and client satisfaction.
@@ -334,7 +334,7 @@ const WebDevelopment = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Choose Your Package
+              Choose Your <span className="bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">Package</span>
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Flexible pricing options to suit businesses of all sizes.
@@ -398,7 +398,7 @@ const WebDevelopment = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              What Our Clients Say
+              What Our <span className="bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">Clients</span> Say
             </h2>
           </motion.div>
 
@@ -443,7 +443,7 @@ const WebDevelopment = () => {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Ready to Build Your Dream Website?
+              Ready to Build Your <span className="bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent">Dream Website</span>?
             </h2>
             <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
               Get a free consultation and detailed project proposal within 24 hours.
