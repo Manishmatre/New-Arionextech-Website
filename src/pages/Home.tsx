@@ -250,7 +250,7 @@ const Home = () => {
               {/* Main Heading */}
               <motion.h1 
                 variants={fadeInUp}
-                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 sm:mb-8 leading-tight"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 sm:mb-8 leading-tight"
               >
                 <motion.span 
                   className="block text-white"
@@ -262,7 +262,7 @@ const Home = () => {
                 </motion.span>
                 
                 {/* Animated changing text for services */}
-                <div className="block h-12 sm:h-14 md:h-16 lg:h-20 xl:h-24 overflow-hidden -mb-1 sm:-mb-2 md:-mb-4">
+                <div className="block min-h-14 sm:min-h-16 md:min-h-20 lg:min-h-24 xl:min-h-28 overflow-hidden mb-2 sm:mb-4 md:mb-2 lg:-mb-2 xl:-mb-4">
                   <motion.span 
                     key={currentServiceIndex}
                     className="block bg-gradient-to-r from-blue-400 via-primary to-blue-600 bg-clip-text text-transparent leading-tight"
@@ -281,7 +281,7 @@ const Home = () => {
                 </div>
                 
                 <motion.span 
-                  className="block text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl"
+                  className="block text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl"
                   initial={{ opacity: 0, x: 50 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.8, delay: 0.9 }}
@@ -294,7 +294,7 @@ const Home = () => {
               <motion.p 
                 key={`subtitle-${currentServiceIndex}`}
                 variants={fadeInUp}
-                className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-200 mb-8 sm:mb-12 max-w-4xl mx-auto leading-relaxed px-2"
+                className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-200 mb-8 sm:mb-12 max-w-4xl mx-auto leading-relaxed px-2"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -30 }}
