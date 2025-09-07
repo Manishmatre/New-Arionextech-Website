@@ -13,6 +13,7 @@ import Products from './pages/Products';
 import Contact from './pages/Contact';
 import Careers from './pages/Careers';
 import FAQs from './pages/FAQs';
+import Blog from './pages/Blog';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
 import HelpCenter from './pages/HelpCenter';
@@ -61,6 +62,7 @@ function App() {
             <Route path="/internships" element={<Internships />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/faqs" element={<FAQs />} />
+            <Route path="/blog" element={<Blog />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />
             <Route path="/help" element={<HelpCenter />} />
