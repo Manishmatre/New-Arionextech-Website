@@ -18,24 +18,30 @@ const Services = () => {
       description: 'Custom websites and web applications built with the latest technologies for optimal performance and user experience.',
       icon: <CodeBracketIcon className="h-10 w-10 text-primary" />,
       link: '/services/web-development',
+      isTopService: true,
+      badge: 'Most Popular'
     },
     {
       title: 'Mobile Apps',
       description: 'Native and cross-platform mobile applications for iOS and Android that engage users and drive business growth.',
       icon: <DevicePhoneMobileIcon className="h-10 w-10 text-primary" />,
       link: '/services/mobile-app-development',
+      isTopService: true,
+      badge: 'High Demand'
+    },
+    {
+      title: 'Custom Software',
+      description: 'Tailored software solutions designed specifically for your unique business requirements and workflows.',
+      icon: <CodeBracketIcon className="h-10 w-10 text-primary" />,
+      link: '/services/custom-software',
+      isTopService: true,
+      badge: 'Trending'
     },
     {
       title: 'Cloud Solutions',
       description: 'Scalable and secure cloud infrastructure to optimize your business operations and reduce costs.',
       icon: <CloudArrowUpIcon className="h-10 w-10 text-primary" />,
       link: '/services/cloud-solutions',
-    },
-    {
-      title: 'AI & ML',
-      description: 'Intelligent solutions powered by artificial intelligence and machine learning to transform your business.',
-      icon: <CpuChipIcon className="h-10 w-10 text-primary" />,
-      link: '/services/ai-ml',
     },
     {
       title: 'DevOps',
@@ -80,10 +86,10 @@ const Services = () => {
       link: '/services/staff-augmentation',
     },
     {
-      title: 'Custom Software',
-      description: 'Tailored software solutions designed specifically for your unique business requirements and workflows.',
-      icon: <CodeBracketIcon className="h-10 w-10 text-primary" />,
-      link: '/services/custom-software',
+      title: 'AI & ML',
+      description: 'Intelligent solutions powered by artificial intelligence and machine learning to transform your business.',
+      icon: <CpuChipIcon className="h-10 w-10 text-primary" />,
+      link: '/services/ai-ml',
     },
   ];
 
@@ -124,16 +130,42 @@ const Services = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group hover:-translate-y-1"
+                className={`bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group relative ${
+                  service.isTopService ? 'ring-2 ring-primary/50 bg-gradient-to-br from-white to-blue-50/30' : ''
+                }`}
               >
-                <div className="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-6 group-hover:bg-primary/20 transition-colors">
+                {/* Top Service Badge */}
+                {service.isTopService && (
+                  <div className="absolute -top-3 -right-3">
+                    <div className="bg-gradient-to-r from-primary to-blue-600 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-lg">
+                      ⭐ {service.badge}
+                    </div>
+                  </div>
+                )}
+                
+                <div className={`w-16 h-16 flex items-center justify-center rounded-full mb-6 transition-colors ${
+                  service.isTopService 
+                    ? 'bg-gradient-to-br from-primary/20 to-blue-600/20 group-hover:from-primary/30 group-hover:to-blue-600/30' 
+                    : 'bg-primary/10 group-hover:bg-primary/20'
+                }`}>
                   {service.icon}
                 </div>
-                <h3 className="text-xl font-semibold mb-4 text-gray-900">{service.title}</h3>
+                
+                <h3 className={`text-xl font-semibold mb-4 ${
+                  service.isTopService ? 'text-primary' : 'text-gray-900'
+                }`}>
+                  {service.title}
+                </h3>
+                
                 <p className="text-gray-600 mb-6">{service.description}</p>
+                
                 <Link 
                   to={service.link}
-                  className="flex items-center text-primary font-medium group-hover:text-primary-dark transition-colors"
+                  className={`flex items-center font-medium transition-colors ${
+                    service.isTopService 
+                      ? 'text-primary hover:text-blue-600' 
+                      : 'text-primary hover:text-primary-dark'
+                  }`}
                 >
                   <span>Learn More</span>
                   <ArrowRightIcon className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />

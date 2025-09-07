@@ -1,6 +1,13 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+
+// Import project images
+import candelaImage from '../assets/projects_Images/candelapublicshool-website.png';
+import silpokothaImage from '../assets/projects_Images/silpokotha-website.png';
+import geotechImage from '../assets/projects_Images/geotech-website.png';
+import justshootmeImage from '../assets/projects_Images/justshootme_website.png';
+import arionextechImage from '../assets/projects_Images/arionextech_website.png';
 import {
   EyeIcon,
   ArrowTopRightOnSquareIcon,
@@ -34,7 +41,107 @@ const Portfolio: React.FC = () => {
 
   const projects = [
     {
+      id: 1,
+      title: 'Candela Public School',
+      category: 'web',
+      client: 'Candela Public School',
+      description: 'Modern educational website with student portal, online admissions, and comprehensive school management system.',
+      technologies: ['React', 'Node.js', 'MongoDB', 'Express'],
+      image: candelaImage,
+      duration: '4 months',
+      teamSize: 3,
+      status: 'completed',
+      rating: 5,
+      features: ['Student portal', 'Online admissions', 'Fee management', 'Academic calendar'],
+      results: {
+        students: '2000+ students enrolled',
+        efficiency: '60% admin efficiency increase',
+        satisfaction: '95% parent satisfaction'
+      },
+      liveUrl: 'https://candelapublicschool.com/'
+    },
+    {
       id: 2,
+      title: 'Silpokotha - Creative Portfolio',
+      category: 'design',
+      client: 'Creative Agency',
+      description: 'Stunning portfolio website showcasing creative works with interactive galleries and modern animations.',
+      technologies: ['React', 'Framer Motion', 'Tailwind CSS', 'Netlify'],
+      image: silpokothaImage,
+      duration: '2 months',
+      teamSize: 2,
+      status: 'completed',
+      rating: 5,
+      features: ['Interactive galleries', 'Smooth animations', 'Responsive design', 'Contact forms'],
+      results: {
+        performance: '98 PageSpeed score',
+        engagement: '70% longer session time',
+        leads: '200% increase in inquiries'
+      },
+      liveUrl: 'https://silpokotha.netlify.app/'
+    },
+    {
+      id: 3,
+      title: 'Geotech Survey & Construction',
+      category: 'web',
+      client: 'Geotech Construction',
+      description: 'Professional construction company website with precision engineering solutions, surveying services, and comprehensive project management.',
+      technologies: ['React', 'CSS3', 'JavaScript', 'Netlify'],
+      image: geotechImage,
+      duration: '3 months',
+      teamSize: 2,
+      status: 'completed',
+      rating: 5,
+      features: ['Engineering solutions', 'Survey services', 'Project management', 'Client consultation'],
+      results: {
+        leads: '150% increase in leads',
+        visibility: 'Top 3 Google rankings',
+        conversion: '40% higher conversion rate'
+      },
+      liveUrl: 'https://geotechsurvey.netlify.app/'
+    },
+    {
+      id: 4,
+      title: 'Just Shoot Me Productions',
+      category: 'web',
+      client: 'Media Production House',
+      description: 'Creative media production website with video portfolios, booking system, and client management.',
+      technologies: ['React', 'Video.js', 'Node.js', 'Netlify'],
+      image: justshootmeImage,
+      duration: '3 months',
+      teamSize: 3,
+      status: 'completed',
+      rating: 5,
+      features: ['Video portfolios', 'Online booking', 'Client galleries', 'Service packages'],
+      results: {
+        bookings: '300% increase in bookings',
+        showcase: '50+ video projects displayed',
+        clients: '90% client retention rate'
+      },
+      liveUrl: 'https://justshootmeproductions.netlify.app/'
+    },
+    {
+      id: 5,
+      title: 'ArionexTech Official Website',
+      category: 'web',
+      client: 'ArionexTech Software',
+      description: 'Corporate website for software development company with service showcases, portfolio, and client testimonials.',
+      technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
+      image: arionextechImage,
+      duration: '4 months',
+      teamSize: 4,
+      status: 'completed',
+      rating: 5,
+      features: ['Service showcase', 'Portfolio gallery', 'Client testimonials', 'Contact system'],
+      results: {
+        traffic: '400% increase in traffic',
+        leads: '250% more qualified leads',
+        conversion: '60% higher conversion rate'
+      },
+      liveUrl: 'https://www.arionextech.com/'
+    },
+    {
+      id: 6,
       title: 'Healthcare Mobile App',
       category: 'mobile',
       client: 'MediCare Plus',
@@ -110,83 +217,6 @@ const Portfolio: React.FC = () => {
       }
     },
     {
-      id: 7,
-      title: 'Candela Public School Website',
-      category: 'web',
-      client: 'Candela Public School',
-      description: 'Modern educational website with student portal, online admissions, faculty management, and parent communication system.',
-      technologies: ['React', 'Node.js', 'MongoDB', 'Express', 'Tailwind CSS'],
-      image: 'https://images.unsplash.com/photo-1523050854058-8df90110c9d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      duration: '3 months',
-      teamSize: 4,
-      status: 'completed',
-      rating: 5,
-      features: ['Student portal', 'Online admissions', 'Faculty management', 'Parent communication'],
-      results: {
-        admissions: '+200% online admissions',
-        engagement: '90% parent engagement',
-        efficiency: '+150% administrative efficiency'
-      }
-    },
-    {
-      id: 8,
-      title: 'Silpo Kotha - Handmade Jewelry E-Commerce',
-      category: 'web',
-      client: 'Silpo Kotha',
-      description: 'Beautiful e-commerce platform for handmade jewelry with custom design requests, artisan profiles, and secure payments.',
-      technologies: ['Next.js', 'Stripe', 'MongoDB', 'Cloudinary', 'Tailwind CSS'],
-      image: 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      duration: '4 months',
-      teamSize: 3,
-      status: 'completed',
-      rating: 5,
-      features: ['Custom jewelry design', 'Artisan profiles', 'Secure payments', 'Order tracking'],
-      results: {
-        sales: '+300% online sales',
-        customers: '5K+ registered customers',
-        orders: '1K+ monthly orders'
-      }
-    },
-    {
-      id: 9,
-      title: 'GeoTech Survey & Construction Website',
-      category: 'web',
-      client: 'GeoTech Survey & Construction',
-      description: 'Professional construction company website with project portfolio, service showcase, and client management system.',
-      technologies: ['React', 'Node.js', 'PostgreSQL', 'AWS S3', 'Bootstrap'],
-      image: 'https://images.unsplash.com/photo-1541976590-713941681591?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      duration: '2 months',
-      teamSize: 3,
-      status: 'completed',
-      rating: 5,
-      features: ['Project portfolio', 'Service showcase', 'Client management', 'Quote system'],
-      results: {
-        leads: '+180% lead generation',
-        inquiries: '200+ monthly inquiries',
-        conversion: '+120% quote conversion'
-      }
-    },
-    {
-      id: 10,
-      title: 'Just Shoot Me Productions Website',
-      category: 'web',
-      client: 'Just Shoot Me Productions',
-      description: 'Creative production house website with video portfolio, booking system, and client collaboration tools.',
-      technologies: ['React', 'Node.js', 'MongoDB', 'Vimeo API', 'Material-UI'],
-      image: 'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      duration: '3 months',
-      teamSize: 4,
-      status: 'completed',
-      rating: 5,
-      features: ['Video portfolio', 'Online booking', 'Client collaboration', 'Project management'],
-      results: {
-        bookings: '+250% online bookings',
-        clients: '100+ active clients',
-        projects: '500+ completed projects'
-      }
-    },
-    {
-      id: 11,
       title: 'Swami Vivekananda Institute of Paramedical & Nursing',
       category: 'web',
       client: 'Swami Vivekananda Institute',
@@ -596,13 +626,20 @@ const Portfolio: React.FC = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div className="absolute bottom-4 left-4 right-4">
-                      <div className="flex gap-2">
+                          <div className="flex gap-2">
                         <button className="bg-white/20 backdrop-blur-sm text-white p-2 rounded-lg hover:bg-white/30 transition-colors">
                           <EyeIcon className="h-5 w-5" />
                         </button>
-                        <button className="bg-white/20 backdrop-blur-sm text-white p-2 rounded-lg hover:bg-white/30 transition-colors">
-                          <ArrowTopRightOnSquareIcon className="h-5 w-5" />
-                        </button>
+                        {project.liveUrl && (
+                          <a
+                            href={project.liveUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="bg-white/20 backdrop-blur-sm text-white p-2 rounded-lg hover:bg-white/30 transition-colors"
+                          >
+                            <ArrowTopRightOnSquareIcon className="h-5 w-5" />
+                          </a>
+                        )}
                       </div>
                     </div>
                   </div>

@@ -3,8 +3,45 @@ import type { Variants } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRightIcon, CodeBracketIcon, CloudArrowUpIcon, CpuChipIcon, StarIcon, CheckCircleIcon, ClockIcon, PhoneIcon, ChatBubbleLeftRightIcon, DocumentTextIcon, PresentationChartLineIcon, CogIcon, RocketLaunchIcon, DevicePhoneMobileIcon, SparklesIcon, PlayIcon } from '@heroicons/react/24/outline';
 import bgVideo from '../assets/arionextech_bg-Video.mp4';
+import { useState, useEffect } from 'react';
 
 const Home = () => {
+  // Animated text for services
+  const [currentServiceIndex, setCurrentServiceIndex] = useState(0);
+  const services = [
+    {
+      name: 'Web Development',
+      subtitle: 'From responsive websites to complex web applications, we build digital experiences that engage and convert your audience.'
+    },
+    {
+      name: 'Mobile Apps',
+      subtitle: 'Native and cross-platform mobile solutions that deliver seamless user experiences across iOS and Android devices.'
+    },
+    {
+      name: 'AI & Machine Learning',
+      subtitle: 'Intelligent systems that learn, adapt, and automate your business processes for maximum efficiency and insights.'
+    },
+    {
+      name: 'Custom Software',
+      subtitle: 'Tailored enterprise solutions designed specifically for your unique business requirements and workflows.'
+    },
+    {
+      name: 'UI/UX Design',
+      subtitle: 'Beautiful, intuitive interfaces that create memorable user experiences and drive customer satisfaction.'
+    },
+    {
+      name: 'Digital Marketing',
+      subtitle: 'Strategic online campaigns that boost your brand visibility, engagement, and drive measurable business growth.'
+    }
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentServiceIndex((prev) => (prev + 1) % services.length);
+    }, 2500);
+    return () => clearInterval(interval);
+  }, []);
+
   const fadeInUp: Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
@@ -202,37 +239,49 @@ const Home = () => {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.8, delay: 0.3 }}
                 >
-                  Transform Your
+                  Innovative Solutions for
                 </motion.span>
+                
+                {/* Animated changing text for services */}
+                <div className="block h-16 md:h-20 lg:h-24 overflow-hidden -mb-2 md:-mb-4">
+                  <motion.span 
+                    key={currentServiceIndex}
+                    className="block bg-gradient-to-r from-blue-400 via-primary to-blue-600 bg-clip-text text-transparent leading-tight"
+                    initial={{ opacity: 0, y: 100, rotateX: -90 }}
+                    animate={{ opacity: 1, y: 0, rotateX: 0 }}
+                    exit={{ opacity: 0, y: -100, rotateX: 90 }}
+                    transition={{ 
+                      duration: 0.8, 
+                      type: "spring", 
+                      stiffness: 100,
+                      ease: [0.25, 0.46, 0.45, 0.94]
+                    }}
+                  >
+                    {services[currentServiceIndex].name}
+                  </motion.span>
+                </div>
+                
                 <motion.span 
-                  className="block bg-gradient-to-r from-blue-400 via-primary to-blue-600 bg-clip-text text-transparent"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.8, delay: 0.6, type: "spring", stiffness: 100 }}
-                >
-                  Digital Vision
-                </motion.span>
-                <motion.span 
-                  className="block text-white text-3xl md:text-4xl lg:text-5xl mt-2"
+                  className="block text-white text-3xl md:text-4xl lg:text-5xl"
                   initial={{ opacity: 0, x: 50 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.8, delay: 0.9 }}
                 >
-                  Into Reality
+                  That Drive Success
                 </motion.span>
               </motion.h1>
               
-              {/* Subtitle */}
+              {/* Dynamic subtitle based on current service */}
               <motion.p 
+                key={`subtitle-${currentServiceIndex}`}
                 variants={fadeInUp}
                 className="text-lg md:text-xl lg:text-2xl text-gray-200 mb-12 max-w-4xl mx-auto leading-relaxed"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 1.2 }}
+                exit={{ opacity: 0, y: -30 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
               >
-                We craft cutting-edge software solutions that 
-                <span className="text-blue-300 font-semibold"> revolutionize businesses</span> and 
-                <span className="text-blue-400 font-semibold"> accelerate growth</span> in the digital age.
+                {services[currentServiceIndex].subtitle}
               </motion.p>
 
               {/* Key Features */}

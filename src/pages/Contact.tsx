@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { EnvelopeIcon, MapPinIcon, PhoneIcon, ClockIcon, CheckCircleIcon } from '@heroicons/react/24/outline';
+import { MapPinIcon, PhoneIcon, EnvelopeIcon, CheckCircleIcon, ClockIcon } from '@heroicons/react/24/outline';
+import emailjs from '@emailjs/browser';
 import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa';
 
 const Contact = () => {
@@ -9,9 +10,32 @@ const Contact = () => {
     email: '',
     subject: '',
     message: '',
+    number: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
+  const [errors, setErrors] = useState<{[key: string]: string}>({});
+
+  const validateForm = () => {
+    const newErrors: {[key: string]: string} = {};
+    
+    if (!formData.name.trim()) {
+      newErrors.name = 'Name is required';
+    }
+    
+    if (!formData.email.trim()) {
+      newErrors.email = 'Email is required';
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = 'Please enter a valid email address';
+    }
+    
+    if (!formData.message.trim()) {
+      newErrors.message = 'Message is required';
+    }
+    
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -19,6 +43,14 @@ const Contact = () => {
       ...prev,
       [name]: value
     }));
+    
+    // Clear error when user starts typing
+    if (errors[name]) {
+      setErrors(prev => ({
+        ...prev,
+        [name]: ''
+      }));
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -26,18 +58,42 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
-      // Simulate form submission delay
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      // Form submission logic would go here
-      console.log('Form submitted:', formData);
-      
+ 
+      if (!validateForm()) {
+        setIsSubmitting(false);
+        return;
+      }
+
+      // EmailJS configuration
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID || 'service_2comkqc';
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'template_giacn2x';
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+      // Template parameters matching your EmailJS template
+      const templateParams = {
+        name: formData.name,
+        email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+        number: formData.number,
+        to_email: 'arionextech@gmail.com'
+      };
+
+      // Check if public key is available
+      if (!publicKey) {
+        throw new Error('EmailJS public key not configured. Please add VITE_EMAILJS_PUBLIC_KEY to your .env file.');
+      }
+
+      // Send email using EmailJS
+      await emailjs.send(serviceId, templateId, templateParams, publicKey);
+
       // Reset form
       setFormData({
         name: '',
         email: '',
         subject: '',
         message: '',
+        number: '',
       });
       
       // Show success message
@@ -45,6 +101,7 @@ const Contact = () => {
       setTimeout(() => setShowSuccess(false), 5000);
     } catch (error) {
       console.error('Form submission error:', error);
+      alert('There was an error sending your message. Please try again or contact us directly.');
     } finally {
       setIsSubmitting(false);
     }
@@ -54,17 +111,17 @@ const Contact = () => {
     {
       icon: <MapPinIcon className="h-6 w-6 text-primary" />,
       title: 'Our Office',
-      description: '123 Tech Street, Jabalpur, MP 482001, India',
+      description: '43A, Vijay Nagar, Jabalpur, Raksha, Madhya Pradesh 482002',
     },
     {
       icon: <PhoneIcon className="h-6 w-6 text-primary" />,
       title: 'Phone',
-      description: '+91 98765 43210',
+      description: '+91 88170 88544',
     },
     {
       icon: <EnvelopeIcon className="h-6 w-6 text-primary" />,
       title: 'Email',
-      description: 'info@arionextech.com',
+      description: 'arionextech@gmail.com',
     },
     {
       icon: <ClockIcon className="h-6 w-6 text-primary" />,
@@ -132,6 +189,7 @@ const Contact = () => {
             >
               <h2 className="text-2xl font-bold text-gray-900 mb-6">Send us a Message</h2>
               <form onSubmit={handleSubmit} className="space-y-6">
+                
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
@@ -144,9 +202,10 @@ const Contact = () => {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200"
+                      className={`w-full px-4 py-3 rounded-lg border ${errors.name ? 'border-red-500' : 'border-gray-300'} focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200`}
                       placeholder="your name"
                     />
+                    {errors.name && <p className="mt-1 text-sm text-red-500">{errors.name}</p>}
                   </div>
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
@@ -159,9 +218,10 @@ const Contact = () => {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200"
+                      className={`w-full px-4 py-3 rounded-lg border ${errors.email ? 'border-red-500' : 'border-gray-300'} focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200`}
                       placeholder="you@example.com"
                     />
+                    {errors.email && <p className="mt-1 text-sm text-red-500">{errors.email}</p>}
                   </div>
                 </div>
                 <div>
@@ -180,6 +240,20 @@ const Contact = () => {
                   />
                 </div>
                 <div>
+                  <label htmlFor="number" className="block text-sm font-medium text-gray-700 mb-1">
+                    Phone Number
+                  </label>
+                  <input
+                    type="tel"
+                    id="number"
+                    name="number"
+                    value={formData.number}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200"
+                    placeholder="+91 9876543210"
+                  />
+                </div>
+                <div>
                   <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
                     Your Message <span className="text-red-500">*</span>
                   </label>
@@ -190,9 +264,10 @@ const Contact = () => {
                     value={formData.message}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200"
+                    className={`w-full px-4 py-3 rounded-lg border ${errors.message ? 'border-red-500' : 'border-gray-300'} focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200`}
                     placeholder="Tell us about your project..."
                   ></textarea>
+                  {errors.message && <p className="mt-1 text-sm text-red-500">{errors.message}</p>}
                 </div>
                 <div>
                   <button
@@ -269,7 +344,7 @@ const Contact = () => {
               <div className="bg-white rounded-xl shadow-lg overflow-hidden">
                 <div className="h-64">
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29376.14768935!2d79.9864!3d23.1815!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3981ae1a6c5e7c85%3A0x5c4f1b5c5e7c8d9e!2sJabalpur%2C%20Madhya%20Pradesh!5e0!3m2!1sen!2sin!4v1635789012345!5m2!1sen!2sin"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3667.5604687153836!2d79.90224957387176!3d23.18623671020354!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3981b1c5a3fe8201%3A0xb3e36a3abcb8225f!2sVijay%20Nagar%2C%20Jabalpur%2C%20Raksha%2C%20Madhya%20Pradesh%20482002!5e0!3m2!1sen!2sin!4v1757243455964!5m2!1sen!2sin"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
@@ -282,7 +357,7 @@ const Contact = () => {
                 <div className="p-4 bg-gray-50">
                   <div className="flex items-center">
                     <MapPinIcon className="h-5 w-5 text-primary mr-2" />
-                    <p className="text-sm text-gray-600">123 Tech Street, Jabalpur, MP 482001, India</p>
+                    <p className="text-sm text-gray-600">43A, Vijay Nagar, Jabalpur, Raksha, Madhya Pradesh 482002</p>
                   </div>
                 </div>
               </div>
