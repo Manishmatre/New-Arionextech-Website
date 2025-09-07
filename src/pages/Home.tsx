@@ -3,9 +3,13 @@ import type { Variants } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRightIcon, CodeBracketIcon, CloudArrowUpIcon, CpuChipIcon, StarIcon, CheckCircleIcon, ClockIcon, PhoneIcon, ChatBubbleLeftRightIcon, DocumentTextIcon, PresentationChartLineIcon, CogIcon, RocketLaunchIcon, DevicePhoneMobileIcon, SparklesIcon, PlayIcon } from '@heroicons/react/24/outline';
 import bgVideo from '../assets/arionextech_bg-Video.mp4';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 const Home = () => {
+  // Video loading state
+  const [videoLoaded, setVideoLoaded] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  
   // Animated text for services
   const [currentServiceIndex, setCurrentServiceIndex] = useState(0);
   const services = [
@@ -187,17 +191,31 @@ const Home = () => {
     <div className="pt-20">
       {/* Hero Section with Background Video */}
       <section className="relative overflow-hidden min-h-screen flex items-center text-white">
-        {/* Background Video */}
+        {/* Background Video with Fallback */}
         <div className="absolute inset-0 z-0">
+          {/* Fallback background image while video loads */}
+          <div className={`absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 transition-opacity duration-1000 ${videoLoaded ? 'opacity-0' : 'opacity-100'}`}>
+            <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNIDQwIDAgTCAwIDAgMCA0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDI1NSwgMjU1LCAyNTUsIDAuMDUpIiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')] opacity-30"></div>
+            {/* Animated elements for fallback */}
+            <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-indigo-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl animate-pulse delay-2000"></div>
+          </div>
+          
           <video
+            ref={videoRef}
             autoPlay
             muted
             loop
             playsInline
-            className="w-full h-full object-cover"
+            preload="metadata"
+            className={`w-full h-full object-cover transition-opacity duration-1000 ${videoLoaded ? 'opacity-100' : 'opacity-0'}`}
+            onLoadedData={() => setVideoLoaded(true)}
+            onCanPlayThrough={() => setVideoLoaded(true)}
           >
             <source src={bgVideo} type="video/mp4" />
           </video>
+          
           {/* Enhanced overlay for text readability */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/40"></div>
           <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-black/30"></div>
@@ -221,17 +239,18 @@ const Home = () => {
               {/* Badge */}
               <motion.div 
                 variants={fadeInUp}
-                className="inline-flex items-center bg-white/10 backdrop-blur-sm text-white px-6 py-3 rounded-full text-sm font-medium mb-8 border border-white/20"
+                className="inline-flex items-center bg-white/10 backdrop-blur-sm text-white px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 md:py-3 rounded-full text-xs sm:text-sm font-medium mb-6 md:mb-8 border border-white/20"
               >
-                <SparklesIcon className="h-4 w-4 mr-2 text-blue-300" />
-                Leading Software Development Company
-                <div className="ml-2 w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                <SparklesIcon className="h-3 sm:h-4 w-3 sm:w-4 mr-1.5 sm:mr-2 text-blue-300" />
+                <span className="hidden sm:inline">Leading Software Development Company</span>
+                <span className="sm:hidden">Leading Software Company</span>
+                <div className="ml-1.5 sm:ml-2 w-1.5 sm:w-2 h-1.5 sm:h-2 bg-green-400 rounded-full animate-pulse"></div>
               </motion.div>
 
               {/* Main Heading */}
               <motion.h1 
                 variants={fadeInUp}
-                className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 md:mb-8 leading-tight"
               >
                 <motion.span 
                   className="block text-white"
@@ -243,7 +262,7 @@ const Home = () => {
                 </motion.span>
                 
                 {/* Animated changing text for services */}
-                <div className="block h-16 md:h-20 lg:h-24 overflow-hidden -mb-2 md:-mb-4">
+                <div className="block h-12 sm:h-14 md:h-20 lg:h-24 overflow-hidden -mb-1 sm:-mb-2 md:-mb-4">
                   <motion.span 
                     key={currentServiceIndex}
                     className="block bg-gradient-to-r from-blue-400 via-primary to-blue-600 bg-clip-text text-transparent leading-tight"
@@ -262,7 +281,7 @@ const Home = () => {
                 </div>
                 
                 <motion.span 
-                  className="block text-white text-3xl md:text-4xl lg:text-5xl"
+                  className="block text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl"
                   initial={{ opacity: 0, x: 50 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.8, delay: 0.9 }}
@@ -275,7 +294,7 @@ const Home = () => {
               <motion.p 
                 key={`subtitle-${currentServiceIndex}`}
                 variants={fadeInUp}
-                className="text-lg md:text-xl lg:text-2xl text-gray-200 mb-12 max-w-4xl mx-auto leading-relaxed"
+                className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-200 mb-8 md:mb-12 max-w-4xl mx-auto leading-relaxed px-4 sm:px-0"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -30 }}
@@ -287,22 +306,25 @@ const Home = () => {
               {/* Key Features */}
               <motion.div 
                 variants={fadeInUp}
-                className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 max-w-4xl mx-auto"
+                className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 sm:gap-3 md:gap-6 mb-6 md:mb-12 max-w-4xl mx-auto px-4 sm:px-0"
               >
                 {[
-                  { icon: <CodeBracketIcon className="h-6 w-6" />, text: "Custom Development" },
-                  { icon: <CpuChipIcon className="h-6 w-6" />, text: "AI-Powered Solutions" },
-                  { icon: <CloudArrowUpIcon className="h-6 w-6" />, text: "Cloud-Native Architecture" }
+                  { icon: <CodeBracketIcon className="h-4 sm:h-5 md:h-6 w-4 sm:w-5 md:w-6" />, text: "Custom Development", shortText: "Custom Dev" },
+                  { icon: <CpuChipIcon className="h-4 sm:h-5 md:h-6 w-4 sm:w-5 md:w-6" />, text: "AI-Powered Solutions", shortText: "AI Solutions" },
+                  { icon: <CloudArrowUpIcon className="h-4 sm:h-5 md:h-6 w-4 sm:w-5 md:w-6" />, text: "Cloud-Native Architecture", shortText: "Cloud Native" }
                 ].map((feature, index) => (
                   <motion.div
                     key={index}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
-                    className="flex items-center justify-center bg-white/10 backdrop-blur-sm rounded-xl px-4 py-3 border border-white/20"
+                    className="flex items-center justify-center bg-white/10 backdrop-blur-sm rounded-lg sm:rounded-xl px-2 py-1.5 sm:px-3 sm:py-2 md:px-4 md:py-3 border border-white/20"
                   >
-                    <span className="text-blue-300 mr-3">{feature.icon}</span>
-                    <span className="text-white font-medium">{feature.text}</span>
+                    <span className="text-blue-300 mr-1.5 sm:mr-2 md:mr-3">{feature.icon}</span>
+                    <span className="text-white font-medium text-xs sm:text-sm md:text-base">
+                      <span className="hidden sm:inline">{feature.text}</span>
+                      <span className="sm:hidden">{feature.shortText}</span>
+                    </span>
                   </motion.div>
                 ))}
               </motion.div>
@@ -310,32 +332,34 @@ const Home = () => {
               {/* CTA Buttons */}
               <motion.div 
                 variants={fadeInUp}
-                className="flex flex-col sm:flex-row justify-center gap-4 mb-12"
+                className="flex flex-col sm:flex-row justify-center gap-2 sm:gap-3 mb-6 md:mb-12 px-4 sm:px-0"
               >
                 <Link
                   to="/contact"
-                  className="group relative bg-gradient-to-r from-primary to-primary-dark text-white font-semibold px-6 py-3 rounded-lg text-base hover:from-blue-500 hover:to-primary transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-primary/25 inline-flex items-center justify-center"
+                  className="group relative bg-gradient-to-r from-primary to-primary-dark text-white font-semibold px-3 sm:px-4 md:px-6 py-2 sm:py-2.5 md:py-3 rounded-lg text-xs sm:text-sm md:text-base hover:from-blue-500 hover:to-primary transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-primary/25 inline-flex items-center justify-center"
                 >
-                  <RocketLaunchIcon className="mr-2 h-5 w-5" />
-                  Start Your Project
-                  <ArrowRightIcon className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
+                  <RocketLaunchIcon className="mr-1 sm:mr-1.5 md:mr-2 h-3.5 sm:h-4 md:h-5 w-3.5 sm:w-4 md:w-5" />
+                  <span className="hidden sm:inline">Start Your Project</span>
+                  <span className="sm:hidden">Start Project</span>
+                  <ArrowRightIcon className="ml-1 sm:ml-1.5 md:ml-2 h-3 sm:h-3.5 md:h-4 w-3 sm:w-3.5 md:w-4 group-hover:translate-x-1 transition-transform duration-300" />
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-primary rounded-lg blur opacity-30 group-hover:opacity-50 transition-opacity duration-300 -z-10"></div>
                 </Link>
                 
                 <Link
                   to="/portfolio"
-                  className="group bg-white/10 backdrop-blur-sm text-white border-2 border-white/30 font-medium px-6 py-3 rounded-lg text-base hover:bg-white/20 hover:border-white/50 transform hover:scale-105 transition-all duration-300 inline-flex items-center justify-center"
+                  className="group bg-white/10 backdrop-blur-sm text-white border-2 border-white/30 font-medium px-3 sm:px-4 md:px-6 py-2 sm:py-2.5 md:py-3 rounded-lg text-xs sm:text-sm md:text-base hover:bg-white/20 hover:border-white/50 transform hover:scale-105 transition-all duration-300 inline-flex items-center justify-center"
                 >
-                  <PlayIcon className="mr-2 h-5 w-5" />
-                  View Our Work
-                  <ArrowRightIcon className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
+                  <PlayIcon className="mr-1 sm:mr-1.5 md:mr-2 h-3.5 sm:h-4 md:h-5 w-3.5 sm:w-4 md:w-5" />
+                  <span className="hidden sm:inline">View Our Work</span>
+                  <span className="sm:hidden">Our Work</span>
+                  <ArrowRightIcon className="ml-1 sm:ml-1.5 md:ml-2 h-3 sm:h-3.5 md:h-4 w-3 sm:w-3.5 md:w-4 group-hover:translate-x-1 transition-transform duration-300" />
                 </Link>
               </motion.div>
 
               {/* Stats Row */}
               <motion.div 
                 variants={fadeInUp}
-                className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 max-w-4xl mx-auto mb-16"
+                className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8 max-w-4xl mx-auto mb-12 md:mb-16 px-4 sm:px-0"
               >
                 {[
                   { number: '50+', label: 'Projects Delivered' },
@@ -348,10 +372,10 @@ const Home = () => {
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.6, delay: 1.2 + index * 0.1 }}
-                    className="text-center px-2"
+                    className="text-center px-1 sm:px-2"
                   >
-                    <div className="text-2xl md:text-3xl font-bold text-blue-300 mb-2">{stat.number}</div>
-                    <div className="text-xs md:text-sm text-gray-300 uppercase tracking-wide leading-tight">{stat.label}</div>
+                    <div className="text-xl sm:text-2xl md:text-3xl font-bold text-blue-300 mb-1 sm:mb-2">{stat.number}</div>
+                    <div className="text-xs sm:text-sm text-gray-300 uppercase tracking-wide leading-tight">{stat.label}</div>
                   </motion.div>
                 ))}
               </motion.div>

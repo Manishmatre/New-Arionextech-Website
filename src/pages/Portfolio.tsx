@@ -28,6 +28,18 @@ import {
 const Portfolio: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');
+  const [selectedProject, setSelectedProject] = useState<any>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = (project: any) => {
+    setSelectedProject(project);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedProject(null);
+  };
 
   const categories = [
     { id: 'all', name: 'All Projects', count: 39 },
@@ -627,7 +639,10 @@ const Portfolio: React.FC = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div className="absolute bottom-4 left-4 right-4">
                           <div className="flex gap-2">
-                        <button className="bg-white/20 backdrop-blur-sm text-white p-2 rounded-lg hover:bg-white/30 transition-colors">
+                        <button 
+                          onClick={() => openModal(project)}
+                          className="bg-white/20 backdrop-blur-sm text-white p-2 rounded-lg hover:bg-white/30 transition-colors"
+                        >
                           <EyeIcon className="h-5 w-5" />
                         </button>
                         {project.liveUrl && (
@@ -749,6 +764,142 @@ const Portfolio: React.FC = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* Project Modal */}
+      {isModalOpen && selectedProject && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.8 }}
+            transition={{ duration: 0.3 }}
+            className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+          >
+            {/* Modal Header */}
+            <div className="relative">
+              <motion.img
+                initial={{ scale: 1.1 }}
+                animate={{ scale: 1 }}
+                transition={{ duration: 0.5 }}
+                src={selectedProject.image}
+                alt={selectedProject.title}
+                className="w-full h-64 md:h-80 object-cover rounded-t-2xl"
+              />
+              <button
+                onClick={closeModal}
+                className="absolute top-4 right-4 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition-colors"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+              <div className="absolute bottom-4 left-4">
+                <div className="flex items-center bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
+                  {[...Array(selectedProject.rating)].map((_, i) => (
+                    <StarIcon key={i} className="h-4 w-4 text-yellow-400 fill-current" />
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Modal Content */}
+            <div className="p-6 md:p-8">
+              <div className="flex items-center justify-between mb-4">
+                <span className="text-sm text-primary font-medium bg-primary/10 px-3 py-1 rounded-full">
+                  {categories.find(cat => cat.id === selectedProject.category)?.name}
+                </span>
+                <div className="flex items-center text-sm text-gray-500">
+                  <CalendarIcon className="h-4 w-4 mr-1" />
+                  {selectedProject.duration}
+                </div>
+              </div>
+
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+                {selectedProject.title}
+              </h2>
+              <p className="text-gray-600 mb-4">Client: {selectedProject.client}</p>
+              <p className="text-gray-700 mb-6 leading-relaxed">{selectedProject.description}</p>
+
+              {/* Technologies */}
+              <div className="mb-6">
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">Technologies Used</h3>
+                <div className="flex flex-wrap gap-2">
+                  {selectedProject.technologies.map((tech: string, index: number) => (
+                    <span
+                      key={index}
+                      className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Features */}
+              {selectedProject.features && (
+                <div className="mb-6">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Key Features</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                    {selectedProject.features.map((feature: string, index: number) => (
+                      <div key={index} className="flex items-center text-gray-700">
+                        <CheckCircleIcon className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
+                        {feature}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Results */}
+              {selectedProject.results && (
+                <div className="mb-6">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Project Results</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    {Object.entries(selectedProject.results).map(([key, value], index) => (
+                      <div key={index} className="bg-gray-50 p-4 rounded-lg text-center">
+                        <div className="text-lg font-bold text-primary mb-1">{value as string}</div>
+                        <div className="text-sm text-gray-600 capitalize">{key.replace(/([A-Z])/g, ' $1').trim()}</div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Project Info */}
+              <div className="grid grid-cols-2 gap-4 mb-6 p-4 bg-gray-50 rounded-lg">
+                <div className="text-center">
+                  <div className="text-lg font-bold text-gray-900">{selectedProject.teamSize}</div>
+                  <div className="text-sm text-gray-600">Team Members</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-lg font-bold text-gray-900 capitalize">{selectedProject.status}</div>
+                  <div className="text-sm text-gray-600">Status</div>
+                </div>
+              </div>
+
+              {/* Action Buttons */}
+              <div className="flex gap-4">
+                {selectedProject.liveUrl && (
+                  <a
+                    href={selectedProject.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 bg-primary text-white py-3 px-6 rounded-lg hover:bg-primary-dark transition-colors text-center font-medium"
+                  >
+                    View Live Project
+                  </a>
+                )}
+                <button
+                  onClick={closeModal}
+                  className="flex-1 border border-gray-300 text-gray-700 py-3 px-6 rounded-lg hover:bg-gray-50 transition-colors font-medium"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      )}
     </div>
   );
 };
