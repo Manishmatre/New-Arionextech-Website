@@ -63,7 +63,7 @@ const Navbar = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className={`${scrolled ? 'text-gray-700' : 'text-gray-800'} hover:text-primary focus:outline-none transition-all duration-300 p-2 rounded-lg hover:bg-gray-100/10`}
+              className={`${scrolled ? 'text-gray-700' : 'text-gray-800'} hover:text-primary focus:outline-none transition-all duration-300 p-2`}
               aria-label="Toggle menu"
             >
               {isOpen ? <XMarkIcon className="h-6 w-6" /> : <Bars3Icon className="h-6 w-6" />}

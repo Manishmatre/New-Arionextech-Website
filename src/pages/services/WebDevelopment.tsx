@@ -158,21 +158,23 @@ const WebDevelopment = () => {
   return (
     <div className="pt-32 pb-20">
       {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden bg-gradient-to-br from-primary/5 to-blue-50">
+      <section className="relative py-12 md:py-20 overflow-hidden bg-gradient-to-br from-primary/5 to-blue-50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="flex items-center justify-center mb-6"
+              className="flex flex-col sm:flex-row items-center justify-center mb-6 sm:mb-8"
             >
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mr-4">
-                <CodeBracketIcon className="h-8 w-8 text-primary" />
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 sm:mb-0 sm:mr-4">
+                <CodeBracketIcon className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
               </div>
-              <div className="text-left">
-                <h1 className="text-4xl md:text-5xl font-bold text-gray-900">Web Development</h1>
-                <p className="text-lg text-gray-600">Custom websites & web applications</p>
+              <div className="text-center sm:text-left">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+                  Web Development
+                </h1>
+                <p className="text-base sm:text-lg text-gray-600 mt-1">Custom websites & web applications</p>
               </div>
             </motion.div>
             
@@ -180,7 +182,7 @@ const WebDevelopment = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-xl text-gray-600 max-w-3xl mx-auto mb-8"
+              className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-6 sm:mb-8 px-4 sm:px-0 leading-relaxed"
             >
               Build powerful, scalable web applications that drive business growth. From simple websites to complex enterprise solutions.
             </motion.p>
@@ -189,13 +191,13 @@ const WebDevelopment = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center"
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4 sm:px-0"
             >
-              <Link to="/contact" className="btn btn-primary inline-flex items-center justify-center">
+              <Link to="/contact" className="btn btn-primary inline-flex items-center justify-center text-sm sm:text-base py-3 px-6">
                 <PhoneIcon className="h-4 w-4 mr-2" />
                 Get Free Quote
               </Link>
-              <button className="btn btn-outline inline-flex items-center justify-center">
+              <button className="btn btn-outline inline-flex items-center justify-center text-sm sm:text-base py-3 px-6">
                 <GlobeAltIcon className="h-4 w-4 mr-2" />
                 View Portfolio
               </button>
