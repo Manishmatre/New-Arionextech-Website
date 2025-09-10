@@ -90,6 +90,21 @@ const About = () => {
       {/* Our Story */}
       <section className="py-20">
         <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Our <span className="bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">Story</span>
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              From humble beginnings to industry leaders - discover how we've grown and evolved.
+            </p>
+          </motion.div>
+          
           <div className="flex flex-col md:flex-row items-center">
             <motion.div 
               className="md:w-1/2 mb-10 md:mb-0 md:pr-10"
@@ -98,7 +113,6 @@ const About = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Story</h2>
               <div className="space-y-4 text-gray-600">
                 <p>
                   Founded in 2018, ArionexTech started as a small team of passionate developers with a vision to create 
@@ -141,8 +155,10 @@ const About = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Values</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Our <span className="bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">Values</span>
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               The principles that guide our work and shape our company culture.
             </p>
           </motion.div>
@@ -181,8 +197,10 @@ const About = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Meet Our Team</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Meet Our <span className="bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">Team</span>
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               Passionate individuals dedicated to delivering exceptional results.
             </p>
           </motion.div>

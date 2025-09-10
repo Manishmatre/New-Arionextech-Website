@@ -193,7 +193,9 @@ const Contact = () => {
               transition={{ duration: 0.6 }}
               className="bg-white rounded-xl shadow-lg p-8"
             >
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">Send us a Message</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                Send us a <span className="bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">Message</span>
+              </h2>
               <form onSubmit={handleSubmit} className="space-y-6">
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -311,7 +313,9 @@ const Contact = () => {
               className="space-y-8"
             >
               <div className="bg-white rounded-xl shadow-lg p-8">
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">Contact Information</h2>
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                  Contact <span className="bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">Information</span>
+                </h2>
                 <div className="space-y-6">
                   {contactInfo.map((item, index) => (
                     <div key={index} className="flex items-start">

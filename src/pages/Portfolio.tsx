@@ -570,10 +570,10 @@ const Portfolio: React.FC = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
-              Featured Projects
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Featured <span className="bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">Projects</span>
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               Browse through our portfolio of successful projects across different technologies and industries
             </p>
           </motion.div>

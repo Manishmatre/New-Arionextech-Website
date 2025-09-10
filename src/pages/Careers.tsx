@@ -151,47 +151,52 @@ const Careers = () => {
     : jobOpenings.filter(job => job.department === selectedDepartment);
 
   return (
-    <div className="pt-32 pb-20">
+    <div className="pt-20">
       {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden bg-gradient-to-br from-primary/5 to-blue-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <motion.h1 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
-            >
+      <section className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white py-20 overflow-hidden">
+        {/* Fallback background pattern */}
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNIDQwIDAgTCAwIDAgMCA0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDI1NSwgMjU1LCAyNTUsIDAuMDUpIiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')] opacity-30"></div>
+        {/* Animated elements */}
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-indigo-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl animate-pulse delay-2000"></div>
+        <div className="container mx-auto px-4 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center max-w-4xl mx-auto"
+          >
+            <div className="inline-flex items-center bg-white/10 text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
+              <UserGroupIcon className="h-4 w-4 mr-2" />
               Join Our Team
-            </motion.h1>
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-xl text-gray-600 max-w-3xl mx-auto mb-8"
-            >
+            </div>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+              Build Your <span className="bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent">Career</span>
+            </h1>
+            <p className="text-xl text-white/90 mb-8 leading-relaxed">
               Build the future of technology with us. We're looking for passionate individuals who want to make a difference.
-            </motion.p>
+            </p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="flex flex-wrap justify-center gap-8 text-sm text-gray-600"
+              className="flex flex-wrap justify-center gap-8 text-sm text-white/80"
             >
               <div className="flex items-center">
-                <UserGroupIcon className="h-5 w-5 mr-2 text-primary" />
+                <UserGroupIcon className="h-5 w-5 mr-2 text-blue-300" />
                 50+ Team Members
               </div>
               <div className="flex items-center">
-                <MapPinIcon className="h-5 w-5 mr-2 text-primary" />
+                <MapPinIcon className="h-5 w-5 mr-2 text-blue-300" />
                 Jabalpur, India
               </div>
               <div className="flex items-center">
-                <GlobeAltIcon className="h-5 w-5 mr-2 text-primary" />
+                <GlobeAltIcon className="h-5 w-5 mr-2 text-blue-300" />
                 Remote Friendly
               </div>
             </motion.div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -206,7 +211,7 @@ const Careers = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Our Culture & Values
+              Our Culture & <span className="bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">Values</span>
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               We foster an environment where innovation thrives and every team member can grow.
@@ -245,7 +250,7 @@ const Careers = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Why Work With Us?
+              Why Work With <span className="bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">Us?</span>
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               We offer comprehensive benefits and perks to ensure our team members thrive.
@@ -284,7 +289,7 @@ const Careers = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Open Positions
+              Open <span className="bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">Positions</span>
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
               Explore our current job openings and find your perfect role.
@@ -391,7 +396,7 @@ const Careers = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Our Hiring Process
+              Our Hiring <span className="bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">Process</span>
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               We've designed a transparent and efficient hiring process to find the best talent.

@@ -157,27 +157,32 @@ const HelpCenter = () => {
   );
 
   return (
-    <div className="pt-32 pb-20">
+    <div className="pt-20">
       {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden bg-gradient-to-br from-primary/5 to-blue-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <motion.h1 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
-            >
-              Help Center
-            </motion.h1>
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-xl text-gray-600 max-w-3xl mx-auto mb-8"
-            >
+      <section className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white py-20 overflow-hidden">
+        {/* Fallback background pattern */}
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNIDQwIDAgTCAwIDAgMCA0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDI1NSwgMjU1LCAyNTUsIDAuMDUpIiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')] opacity-30"></div>
+        {/* Animated elements */}
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-indigo-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl animate-pulse delay-2000"></div>
+        <div className="container mx-auto px-4 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center max-w-4xl mx-auto"
+          >
+            <div className="inline-flex items-center bg-white/10 text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
+              <QuestionMarkCircleIcon className="h-4 w-4 mr-2" />
+              Support & Documentation
+            </div>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+              Help <span className="bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent">Center</span>
+            </h1>
+            <p className="text-xl text-white/90 mb-8 leading-relaxed">
               Find answers, get support, and learn how to make the most of our products.
-            </motion.p>
+            </p>
 
             {/* Search Bar */}
             <motion.div
@@ -193,11 +198,11 @@ const HelpCenter = () => {
                   placeholder="Search for help articles, guides, or tutorials..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-12 pr-4 py-4 rounded-xl border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent text-lg"
+                  className="w-full pl-12 pr-4 py-4 rounded-xl border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent text-lg bg-white/95 backdrop-blur-sm"
                 />
               </div>
             </motion.div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -212,7 +217,7 @@ const HelpCenter = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Browse by Category
+              Browse by <span className="bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">Category</span>
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Find the help you need organized by topic and product area.
@@ -264,7 +269,7 @@ const HelpCenter = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Popular Articles
+              Popular <span className="bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">Articles</span>
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Most viewed help articles and guides from our community.
@@ -314,7 +319,7 @@ const HelpCenter = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Still Need Help?
+              Still Need <span className="bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">Help?</span>
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Can't find what you're looking for? Our support team is here to help you.
@@ -370,8 +375,8 @@ const HelpCenter = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Quick Links
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Quick <span className="bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">Links</span>
             </h2>
             <p className="text-lg text-gray-600">
               Jump to commonly accessed resources and pages.
