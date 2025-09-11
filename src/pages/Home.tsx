@@ -1,7 +1,30 @@
 import { motion } from 'framer-motion';
 import type { Variants } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRightIcon, CodeBracketIcon, CloudArrowUpIcon, CpuChipIcon, StarIcon, CheckCircleIcon, ClockIcon, PhoneIcon, ChatBubbleLeftRightIcon, DocumentTextIcon, PresentationChartLineIcon, CogIcon, RocketLaunchIcon, DevicePhoneMobileIcon, SparklesIcon, PlayIcon } from '@heroicons/react/24/outline';
+import { 
+  ArrowRightIcon, 
+  CheckCircleIcon, 
+  BuildingOfficeIcon, 
+  AcademicCapIcon, 
+  ShoppingCartIcon, 
+  CloudArrowUpIcon,
+  UserGroupIcon,
+  ClockIcon,
+  GlobeAltIcon,
+  StarIcon,
+  HeartIcon,
+  CodeBracketIcon,
+  CpuChipIcon,
+  DocumentTextIcon,
+  PresentationChartLineIcon,
+  CogIcon,
+  RocketLaunchIcon,
+  DevicePhoneMobileIcon,
+  SparklesIcon,
+  ChatBubbleLeftRightIcon,
+  PlayIcon,
+  PhoneIcon
+} from '@heroicons/react/24/outline';
 import bgVideo from '../assets/arionextech_bg-Video.mp4';
 import { useState, useEffect, useRef } from 'react';
 
@@ -91,20 +114,20 @@ const Home = () => {
 
   const testimonials = [
     {
-      name: 'Rajesh Kumar',
-      position: 'CEO, TechStart Solutions',
-      company: 'TechStart Solutions',
-      image: 'RK',
+      name: 'Rajneesh Choudhury',
+      position: 'Founder',
+      company: 'JustShootMeProductions',
+      image: 'RC',
       rating: 5,
-      text: 'ArionexTech delivered an exceptional CRM solution that transformed our business operations. Their team understood our requirements perfectly and delivered beyond expectations.',
+      text: 'Absolutely loved the website! It\'s modern, user-friendly, and perfectly matches my vision. Great work and attention to detail!',
     },
     {
-      name: 'Priya Sharma',
-      position: 'Director, EduVision Institute',
-      company: 'EduVision Institute',
-      image: 'PS',
+      name: 'Suvankar',
+      position: 'Director',
+      company: 'Vivekananda Paramedical',
+      image: 'SV',
       rating: 5,
-      text: 'The education management system they built for us has streamlined our entire workflow. Student management, fee tracking, and reporting - everything is now seamless.',
+      text: 'Working with ArionexTech has been an excellent experience. Their team understood our needs clearly and delivered a professional website that perfectly represents our institute. From design to functionality, everything was handled with care and expertise. We are especially happy with the SEO results – our website is already ranking at the top.',
     },
     {
       name: 'Amit Patel',
@@ -660,6 +683,163 @@ const Home = () => {
                 </Link>
               </div>
             </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Top Products Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <div className="inline-flex items-center bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-4">
+              <ShoppingCartIcon className="h-4 w-4 mr-2" />
+              Our Products
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Ready-to-Use <span className="bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">Solutions</span>
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Powerful software products designed to accelerate your business growth and streamline operations
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            {[
+              {
+                name: 'ArionexCRM',
+                description: 'Complete customer relationship management solution for modern businesses',
+                    status: 'Under Development',
+                price: 'Coming Soon',
+                features: ['Lead Management', 'Sales Pipeline', 'Customer Analytics', 'Mobile App'],
+                icon: <BuildingOfficeIcon className="h-8 w-8 text-white" />,
+                gradient: 'from-blue-600 to-blue-800',
+                popular: true
+              },
+              {
+                name: 'DentalOs.Ai',
+                description: 'AI-powered dental clinic management software with intelligent automation',
+                status: 'Under Development',
+                price: 'Coming Soon',
+                features: ['Patient Management', 'AI Diagnostics', 'Appointment Scheduling', 'Treatment Planning'],
+                icon: <HeartIcon className="h-8 w-8 text-white" />,
+                gradient: 'from-emerald-600 to-emerald-800',
+                popular: false
+              },
+              {
+                name: 'School Management Software',
+                description: 'Comprehensive school management system for educational institutions',
+                status: 'Under Development',
+                price: 'Coming Soon',
+                features: ['Student Enrollment', 'Academic Records', 'Staff Management', 'Fee Management'],
+                icon: <AcademicCapIcon className="h-8 w-8 text-white" />,
+                gradient: 'from-purple-600 to-purple-800',
+                popular: false
+              },
+              // {
+              //   name: 'CloudSync',
+              //   description: 'Secure cloud storage and file synchronization solution for businesses',
+              //   status: 'Live',
+              //   price: '₹999/month',
+              //   features: ['File Sync', 'Team Collaboration', 'Security Encryption', 'API Access'],
+              //   icon: <CloudArrowUpIcon className="h-8 w-8 text-white" />,
+              //   gradient: 'from-purple-600 to-purple-800',
+              //   popular: false
+              // }
+            ].map((product, index) => (
+              <motion.div
+                key={product.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="relative group"
+              >
+                {product.popular && (
+                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
+                    <div className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-4 py-1 rounded-full text-sm font-medium shadow-lg">
+                      Most Popular
+                    </div>
+                  </div>
+                )}
+                
+                <div className={`relative overflow-hidden rounded-2xl bg-gradient-to-br ${product.gradient} p-8 text-white h-full transform group-hover:scale-105 transition-all duration-300 shadow-xl group-hover:shadow-2xl`}>
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16"></div>
+                  <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/5 rounded-full -ml-12 -mb-12"></div>
+                  
+                  <div className="relative z-10">
+                    <div className="flex items-center justify-between mb-6">
+                      <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center group-hover:bg-white/30 transition-colors duration-300">
+                        {product.icon}
+                      </div>
+                      <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
+                    product.status === 'Live' 
+                      ? 'bg-green-500 text-white' 
+                      : product.status === 'Beta'
+                      ? 'bg-blue-500 text-white'
+                      : product.status === 'Under Development'
+                      ? 'bg-orange-500 text-white'
+                      : product.status === 'Coming Soon'
+                      ? 'bg-yellow-500 text-white'
+                      : 'bg-yellow-500 text-white'
+                  }`}>
+                        {product.status}
+                      </span>
+                    </div>
+                    
+                    <h3 className="text-2xl font-bold mb-3">{product.name}</h3>
+                    <p className="text-white/90 mb-6 leading-relaxed">{product.description}</p>
+                    
+                    <div className="space-y-2 mb-6">
+                      {product.features.map((feature, featureIndex) => (
+                        <div key={featureIndex} className="flex items-center text-sm text-white/80">
+                          <CheckCircleIcon className="h-4 w-4 mr-2 text-white/60" />
+                          {feature}
+                        </div>
+                      ))}
+                    </div>
+                    
+                    <div className="border-t border-white/20 pt-6">
+                      <div className="flex items-center justify-between mb-6">
+                        <div className="text-3xl font-bold text-white mb-2">{product.price}</div>
+                        <div className="text-white/70 text-sm">Starting price</div>
+                      </div>
+                      
+                      <div className="mt-8">
+                        <button className={`w-full py-3 px-6 rounded-xl font-semibold transition-all duration-300 ${
+                          product.status === 'Coming Soon' || product.status === 'Under Development'
+                            ? 'bg-white/20 text-white/60 cursor-not-allowed'
+                            : 'bg-white text-gray-900 hover:bg-white/90 hover:scale-105'
+                        }`} disabled={product.status === 'Coming Soon' || product.status === 'Under Development'}>
+                          {product.status === 'Coming Soon' || product.status === 'Under Development' ? 'Notify Me' : 'Get Started'}
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+          
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="text-center mt-12"
+          >
+            <Link
+              to="/products"
+              className="inline-flex items-center text-primary hover:text-primary-dark font-semibold text-lg group"
+            >
+              View All Products
+              <ArrowRightIcon className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
+            </Link>
           </motion.div>
         </div>
       </section>

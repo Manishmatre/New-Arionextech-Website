@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { BuildingOfficeIcon, LightBulbIcon, UserGroupIcon, ClockIcon, GlobeAltIcon } from '@heroicons/react/24/outline';
 import { FaLinkedin, FaTwitter, FaGithub, FaInstagram } from 'react-icons/fa';
+import Logo from '@/assets/arionextech_Logo.png';
 
 const About = () => {
 
@@ -54,7 +55,7 @@ const About = () => {
               About <span className="bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent">ArionexTech</span>
             </h2>
             <p className="text-xl text-white/90 mb-8 leading-relaxed">
-              Empowering businesses through innovative technology solutions since 2018. We combine expertise, innovation, and dedication to deliver exceptional results.
+              Empowering businesses through innovative technology solutions. We combine 5+ years of expertise, innovation, and dedication to deliver exceptional results.
             </p>
           </motion.div>
         </div>
@@ -115,16 +116,17 @@ const About = () => {
             >
               <div className="space-y-4 text-gray-600">
                 <p>
-                  Founded in 2018, ArionexTech started as a small team of passionate developers with a vision to create 
-                  innovative software solutions that make a real difference.
+                  ArionexTech is a dynamic technology company built on 5+ years of combined industry experience. We started with a vision to create 
+                  innovative software solutions that make a real difference for businesses worldwide.
                 </p>
                 <p>
-                  Over the years, we've grown into a full-service technology company, helping businesses of all sizes 
-                  transform their ideas into reality through cutting-edge technology and exceptional service.
+                  As a full-service technology company, we help businesses of all sizes 
+                  transform their ideas into reality through cutting-edge technology and exceptional service. Our team brings together 
+                  years of expertise from various tech domains to deliver outstanding results.
                 </p>
                 <p>
-                  Our commitment to quality, innovation, and customer satisfaction has been the driving force behind our 
-                  success and the success of our clients.
+                  Our commitment to quality, innovation, and customer satisfaction drives everything we do. We believe in building 
+                  long-term partnerships with our clients and delivering solutions that exceed expectations.
                 </p>
               </div>
             </motion.div>
@@ -135,9 +137,21 @@ const About = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <div className="aspect-w-16 aspect-h-9 bg-gray-300 h-80">
-                <div className="w-full h-full flex items-center justify-center text-gray-400">
-                  Company Image
+              <div className="aspect-w-16 aspect-h-9 bg-gradient-to-br from-primary/10 to-blue-100 h-80 relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-blue-200"></div>
+                <div className="absolute top-4 left-4 w-16 h-16 bg-white/30 rounded-full"></div>
+                <div className="absolute top-8 right-8 w-12 h-12 bg-blue-300/40 rounded-full"></div>
+                <div className="absolute bottom-6 left-8 w-20 h-20 bg-primary/20 rounded-full"></div>
+                <div className="absolute bottom-4 right-4 w-8 h-8 bg-white/40 rounded-full"></div>
+                <div className="w-full h-full flex flex-col items-center justify-center relative z-10">
+                  <img
+                    src={Logo}
+                    alt="ArionexTech Logo"
+                    className="h-32 w-auto mb-4 select-none"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <div className="text-sm text-primary/70 mt-2">Innovation • Excellence • Growth</div>
                 </div>
               </div>
             </motion.div>
@@ -205,7 +219,7 @@ const About = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
             {[
               { 
                 name: 'Manish Matre', 
@@ -215,37 +229,30 @@ const About = () => {
                   linkedin: 'https://linkedin.com/in/manishmatre',
                   twitter: 'https://twitter.com/manishmatre',
                   github: 'https://github.com/manishmatre'
-                }
-              },
-              { 
-                name: 'Priya Sharma', 
-                role: 'CTO', 
-                image: 'CTO',
-                social: {
-                  linkedin: 'https://linkedin.com/in/priyasharma',
-                  twitter: 'https://twitter.com/priyasharma',
-                  github: 'https://github.com/priyasharma'
-                }
+                },
+                isFounder: true
               },
               { 
                 name: 'Rahul Singh', 
                 role: 'Lead Developer', 
                 image: 'Developer',
                 social: {
-                  linkedin: 'https://linkedin.com/in/rahulsingh',
-                  github: 'https://github.com/rahulsingh',
-                  instagram: 'https://instagram.com/rahulsingh'
-                }
+                  linkedin: '#',
+                  github: '#',
+                  instagram: '#'
+                },
+                isFounder: false
               },
               { 
                 name: 'Anjali Patel', 
                 role: 'UI/UX Designer', 
                 image: 'Designer',
                 social: {
-                  linkedin: 'https://linkedin.com/in/anjalipatel',
-                  instagram: 'https://instagram.com/anjalipatel',
-                  twitter: 'https://twitter.com/anjalipatel'
-                }
+                  linkedin: '#',
+                  instagram: '#',
+                  twitter: '#'
+                },
+                isFounder: false
               }
             ].map((member, index) => (
               <motion.div
@@ -267,40 +274,44 @@ const About = () => {
                   <div className="flex justify-start space-x-3">
                     {member.social.linkedin && (
                       <a
-                        href={member.social.linkedin}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-8 h-8 bg-blue-600 hover:bg-blue-700 text-white rounded-full flex items-center justify-center transition-colors duration-300"
+                        href={member.isFounder ? member.social.linkedin : '#'}
+                        target={member.isFounder ? "_blank" : "_self"}
+                        rel={member.isFounder ? "noopener noreferrer" : ""}
+                        onClick={!member.isFounder ? (e) => e.preventDefault() : undefined}
+                        className={`w-8 h-8 bg-blue-600 hover:bg-blue-700 text-white rounded-full flex items-center justify-center transition-colors duration-300 ${!member.isFounder ? 'cursor-default opacity-60' : 'cursor-pointer'}`}
                       >
                         <FaLinkedin className="h-4 w-4" />
                       </a>
                     )}
                     {member.social.twitter && (
                       <a
-                        href={member.social.twitter}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-8 h-8 bg-blue-400 hover:bg-blue-500 text-white rounded-full flex items-center justify-center transition-colors duration-300"
+                        href={member.isFounder ? member.social.twitter : '#'}
+                        target={member.isFounder ? "_blank" : "_self"}
+                        rel={member.isFounder ? "noopener noreferrer" : ""}
+                        onClick={!member.isFounder ? (e) => e.preventDefault() : undefined}
+                        className={`w-8 h-8 bg-blue-400 hover:bg-blue-500 text-white rounded-full flex items-center justify-center transition-colors duration-300 ${!member.isFounder ? 'cursor-default opacity-60' : 'cursor-pointer'}`}
                       >
                         <FaTwitter className="h-4 w-4" />
                       </a>
                     )}
                     {member.social.github && (
                       <a
-                        href={member.social.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-8 h-8 bg-gray-800 hover:bg-gray-900 text-white rounded-full flex items-center justify-center transition-colors duration-300"
+                        href={member.isFounder ? member.social.github : '#'}
+                        target={member.isFounder ? "_blank" : "_self"}
+                        rel={member.isFounder ? "noopener noreferrer" : ""}
+                        onClick={!member.isFounder ? (e) => e.preventDefault() : undefined}
+                        className={`w-8 h-8 bg-gray-800 hover:bg-gray-900 text-white rounded-full flex items-center justify-center transition-colors duration-300 ${!member.isFounder ? 'cursor-default opacity-60' : 'cursor-pointer'}`}
                       >
                         <FaGithub className="h-4 w-4" />
                       </a>
                     )}
                     {member.social.instagram && (
                       <a
-                        href={member.social.instagram}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white rounded-full flex items-center justify-center transition-colors duration-300"
+                        href={member.isFounder ? member.social.instagram : '#'}
+                        target={member.isFounder ? "_blank" : "_self"}
+                        rel={member.isFounder ? "noopener noreferrer" : ""}
+                        onClick={!member.isFounder ? (e) => e.preventDefault() : undefined}
+                        className={`w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white rounded-full flex items-center justify-center transition-colors duration-300 ${!member.isFounder ? 'cursor-default opacity-60' : 'cursor-pointer'}`}
                       >
                         <FaInstagram className="h-4 w-4" />
                       </a>

@@ -7,7 +7,8 @@ import {
   CheckCircleIcon,
   ArrowTopRightOnSquareIcon, 
   CloudArrowUpIcon, 
-  ShieldCheckIcon 
+  ShieldCheckIcon,
+  HeartIcon
 } from '@heroicons/react/24/outline';
 
 const Products = () => {
@@ -15,57 +16,75 @@ const Products = () => {
     {
       name: 'ArionexCRM',
       description: 'Complete customer relationship management solution designed for modern businesses. Manage leads, customers, and sales pipeline efficiently.',
-      status: 'Live',
-      price: '₹2,999/month',
+      status: 'Under Development',
+      price: 'Coming Soon',
       features: ['Lead Management', 'Sales Pipeline', 'Customer Analytics', 'Email Integration', 'Mobile App'],
       icon: <BuildingOfficeIcon className="h-8 w-8 text-primary" />,
       category: 'Business Management'
     },
     {
-      name: 'EduTrack Pro',
-      description: 'Comprehensive student information system for educational institutions. Streamline admissions, academics, and administration.',
-      status: 'Beta',
-      price: '₹1,999/month',
-      features: ['Student Management', 'Grade Tracking', 'Attendance System', 'Parent Portal', 'Fee Management'],
+      name: 'DentalOs.Ai',
+      description: 'AI-powered dental clinic management software that streamlines patient care, appointments, and practice operations with intelligent automation.',
+      status: 'Under Development',
+      price: 'Coming Soon',
+      features: ['Patient Management', 'AI Diagnostics', 'Appointment Scheduling', 'Treatment Planning', 'Billing & Insurance'],
+      icon: <HeartIcon className="h-8 w-8 text-primary" />,
+      category: 'Healthcare'
+    },
+    {
+      name: 'School Management Software',
+      description: 'Comprehensive school management system that handles student enrollment, academic records, staff management, and administrative operations.',
+      status: 'Under Development',
+      price: 'Coming Soon',
+      features: ['Student Enrollment', 'Academic Records', 'Staff Management', 'Fee Management', 'Attendance Tracking'],
       icon: <AcademicCapIcon className="h-8 w-8 text-primary" />,
       category: 'Education'
     },
-    {
-      name: 'RetailFlow',
-      description: 'E-commerce and inventory management platform for retail businesses. Manage products, orders, and customers seamlessly.',
-      status: 'Coming Soon',
-      price: '₹3,499/month',
-      features: ['Inventory Management', 'Order Processing', 'Customer Analytics', 'Multi-channel Sales', 'Payment Gateway'],
-      icon: <ShoppingCartIcon className="h-8 w-8 text-primary" />,
-      category: 'E-commerce'
-    },
-    {
-      name: 'CloudSync',
-      description: 'Secure cloud storage and file synchronization solution for businesses. Access your files anywhere, anytime.',
-      status: 'Live',
-      price: '₹999/month',
-      features: ['File Sync', 'Team Collaboration', 'Version Control', 'Security Encryption', 'API Access'],
-      icon: <CloudArrowUpIcon className="h-8 w-8 text-primary" />,
-      category: 'Cloud Services'
-    },
-    {
-      name: 'DataViz Analytics',
-      description: 'Business intelligence platform that transforms data into actionable insights with beautiful visualizations.',
-      status: 'Beta',
-      price: '₹4,999/month',
-      features: ['Data Visualization', 'Custom Reports', 'Real-time Analytics', 'Dashboard Builder', 'AI Insights'],
-      icon: <ChartBarIcon className="h-8 w-8 text-primary" />,
-      category: 'Analytics'
-    },
-    {
-      name: 'SecureVault',
-      description: 'Enterprise-grade security solution with advanced threat detection and data protection capabilities.',
-      status: 'Coming Soon',
-      price: '₹5,999/month',
-      features: ['Threat Detection', 'Data Encryption', 'Access Control', 'Audit Logs', '24/7 Monitoring'],
-      icon: <ShieldCheckIcon className="h-8 w-8 text-primary" />,
-      category: 'Security'
-    },
+    // {
+    //   name: 'EduTrack Pro',
+    //   description: 'Comprehensive student information system for educational institutions. Streamline admissions, academics, and administration.',
+    //   status: 'Beta',
+    //   price: '₹1,999/month',
+    //   features: ['Student Management', 'Grade Tracking', 'Attendance System', 'Parent Portal', 'Fee Management'],
+    //   icon: <AcademicCapIcon className="h-8 w-8 text-primary" />,
+    //   category: 'Education'
+    // },
+    // {
+    //   name: 'RetailFlow',
+    //   description: 'E-commerce and inventory management platform for retail businesses. Manage products, orders, and customers seamlessly.',
+    //   status: 'Coming Soon',
+    //   price: '₹3,499/month',
+    //   features: ['Inventory Management', 'Order Processing', 'Customer Analytics', 'Multi-channel Sales', 'Payment Gateway'],
+    //   icon: <ShoppingCartIcon className="h-8 w-8 text-primary" />,
+    //   category: 'E-commerce'
+    // },
+    // {
+    //   name: 'CloudSync',
+    //   description: 'Secure cloud storage and file synchronization solution for businesses. Access your files anywhere, anytime.',
+    //   status: 'Live',
+    //   price: '₹999/month',
+    //   features: ['File Sync', 'Team Collaboration', 'Version Control', 'Security Encryption', 'API Access'],
+    //   icon: <CloudArrowUpIcon className="h-8 w-8 text-primary" />,
+    //   category: 'Cloud Services'
+    // },
+    // {
+    //   name: 'DataViz Analytics',
+    //   description: 'Business intelligence platform that transforms data into actionable insights with beautiful visualizations.',
+    //   status: 'Beta',
+    //   price: '₹4,999/month',
+    //   features: ['Data Visualization', 'Custom Reports', 'Real-time Analytics', 'Dashboard Builder', 'AI Insights'],
+    //   icon: <ChartBarIcon className="h-8 w-8 text-primary" />,
+    //   category: 'Analytics'
+    // },
+    // {
+    //   name: 'SecureVault',
+    //   description: 'Enterprise-grade security solution with advanced threat detection and data protection capabilities.',
+    //   status: 'Coming Soon',
+    //   price: '₹5,999/month',
+    //   features: ['Threat Detection', 'Data Encryption', 'Access Control', 'Audit Logs', '24/7 Monitoring'],
+    //   icon: <ShieldCheckIcon className="h-8 w-8 text-primary" />,
+    //   category: 'Security'
+    // },
   ];
 
   return (
@@ -119,6 +138,8 @@ const Products = () => {
                       ? 'bg-green-100 text-green-800' 
                       : product.status === 'Beta'
                       ? 'bg-blue-100 text-blue-800'
+                      : product.status === 'Under Development'
+                      ? 'bg-orange-100 text-orange-800'
                       : 'bg-yellow-100 text-yellow-800'
                   }`}>
                     {product.status}
@@ -155,11 +176,11 @@ const Products = () => {
                 
                 <div className="flex gap-2">
                   <button className={`flex-1 py-2 px-4 rounded-lg font-medium transition-colors ${
-                    product.status === 'Coming Soon'
+                    product.status === 'Coming Soon' || product.status === 'Under Development'
                       ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
                       : 'bg-primary text-white hover:bg-primary-dark'
-                  }`} disabled={product.status === 'Coming Soon'}>
-                    {product.status === 'Coming Soon' ? 'Notify Me' : 'Get Started'}
+                  }`} disabled={product.status === 'Coming Soon' || product.status === 'Under Development'}>
+                    {product.status === 'Coming Soon' || product.status === 'Under Development' ? 'Notify Me' : 'Get Started'}
                   </button>
                   <button className="p-2 border border-gray-300 rounded-lg hover:border-primary hover:text-primary transition-colors">
                     <ArrowTopRightOnSquareIcon className="w-5 h-5" />

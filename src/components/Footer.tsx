@@ -62,8 +62,8 @@ const Footer = () => {
       links: [
         { name: 'Web Development', path: '/services#web' },
         { name: 'Mobile Apps', path: '/services#mobile' },
-        { name: 'Cloud Solutions', path: '/services#cloud' },
-        { name: 'AI & ML', path: '/services#ai' },
+        // { name: 'Cloud Solutions', path: '/services#cloud' },
+        // { name: 'AI & ML', path: '/services#ai' },
       ],
     },
     {

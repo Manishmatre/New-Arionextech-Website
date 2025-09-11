@@ -37,24 +37,24 @@ const Services = () => {
       isTopService: true,
       badge: 'Trending'
     },
-    {
-      title: 'Cloud Solutions',
-      description: 'Scalable and secure cloud infrastructure to optimize your business operations and reduce costs.',
-      icon: <CloudArrowUpIcon className="h-10 w-10 text-primary" />,
-      link: '/services/cloud-solutions',
-    },
-    {
-      title: 'DevOps',
-      description: 'Streamlined development and operations with continuous integration and deployment pipelines.',
-      icon: <ServerStackIcon className="h-10 w-10 text-primary" />,
-      link: '/services/devops',
-    },
-    {
-      title: 'Cybersecurity',
-      description: 'Comprehensive security solutions to protect your digital assets and ensure compliance.',
-      icon: <ShieldCheckIcon className="h-10 w-10 text-primary" />,
-      link: '/services/cybersecurity',
-    },
+    // {
+    //   title: 'Cloud Solutions',
+    //   description: 'Scalable and secure cloud infrastructure to optimize your business operations and reduce costs.',
+    //   icon: <CloudArrowUpIcon className="h-10 w-10 text-primary" />,
+    //   link: '/services/cloud-solutions',
+    // },
+    // {
+    //   title: 'DevOps',
+    //   description: 'Streamlined development and operations with continuous integration and deployment pipelines.',
+    //   icon: <ServerStackIcon className="h-10 w-10 text-primary" />,
+    //   link: '/services/devops',
+    // },
+    // {
+    //   title: 'Cybersecurity',
+    //   description: 'Comprehensive security solutions to protect your digital assets and ensure compliance.',
+    //   icon: <ShieldCheckIcon className="h-10 w-10 text-primary" />,
+    //   link: '/services/cybersecurity',
+    // },
     {
       title: 'UI/UX Design',
       description: 'User-centered design solutions that create exceptional experiences and drive conversions.',
@@ -80,17 +80,23 @@ const Services = () => {
       link: '/services/graphic-design',
     },
     {
-      title: 'Staff Augmentation',
-      description: 'Scale your team with pre-vetted, skilled professionals who integrate seamlessly with your workforce.',
+      title: 'WordPress Development',
+      description: 'Custom WordPress websites and e-commerce solutions with responsive design and powerful functionality.',
       icon: <CodeBracketIcon className="h-10 w-10 text-primary" />,
-      link: '/services/staff-augmentation',
+      link: '/services/wordpress-development',
     },
-    {
-      title: 'AI & ML',
-      description: 'Intelligent solutions powered by artificial intelligence and machine learning to transform your business.',
-      icon: <CpuChipIcon className="h-10 w-10 text-primary" />,
-      link: '/services/ai-ml',
-    },
+    // {
+    //   title: 'Staff Augmentation',
+    //   description: 'Scale your team with pre-vetted, skilled professionals who integrate seamlessly with your workforce.',
+    //   icon: <CodeBracketIcon className="h-10 w-10 text-primary" />,
+    //   link: '/services/staff-augmentation',
+    // },
+    // {
+    //   title: 'AI & ML',
+    //   description: 'Intelligent solutions powered by artificial intelligence and machine learning to transform your business.',
+    //   icon: <CpuChipIcon className="h-10 w-10 text-primary" />,
+    //   link: '/services/ai-ml',
+    // },
   ];
 
   return (

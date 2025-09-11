@@ -236,16 +236,32 @@ const Contact = () => {
                   <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">
                     Subject <span className="text-red-500">*</span>
                   </label>
-                  <input
-                    type="text"
+                  <select
                     id="subject"
                     name="subject"
                     value={formData.subject}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200"
-                    placeholder="How can we help?"
-                  />
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200 bg-white"
+                  >
+                    <option value="">Select a subject...</option>
+                    <option value="Web Development">Web Development</option>
+                    <option value="Mobile App Development">Mobile App Development</option>
+                    <option value="Custom Software Development">Custom Software Development</option>
+                    <option value="UI/UX Design">UI/UX Design</option>
+                    <option value="Digital Marketing & SEO">Digital Marketing & SEO</option>
+                    <option value="WordPress Development">WordPress Development</option>
+                    {/* <option value="Cloud Solutions">Cloud Solutions</option> */}
+                    {/* <option value="DevOps & Infrastructure">DevOps & Infrastructure</option> */}
+                    {/* <option value="Cybersecurity">Cybersecurity</option> */}
+                    {/* <option value="AI/ML Solutions">AI/ML Solutions</option> */}
+                    <option value="Product Inquiry">Product Inquiry</option>
+                    <option value="Support & Maintenance">Support & Maintenance</option>
+                    <option value="Partnership Opportunity">Partnership Opportunity</option>
+                    <option value="Career Inquiry">Career Inquiry</option>
+                    <option value="General Inquiry">General Inquiry</option>
+                    <option value="Other">Other</option>
+                  </select>
                 </div>
                 <div>
                   <label htmlFor="number" className="block text-sm font-medium text-gray-700 mb-1">
