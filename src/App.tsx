@@ -17,6 +17,7 @@ import Blog from './pages/Blog';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
 import HelpCenter from './pages/HelpCenter';
+import Testimonials from './pages/Testimonials';
 import WebDevelopment from './pages/services/WebDevelopment';
 import MobileAppDevelopment from './pages/services/MobileAppDevelopment';
 import CloudSolutions from './pages/services/CloudSolutions';
@@ -67,6 +68,7 @@ function App() {
             <Route path="/terms-of-service" element={<TermsOfService />} />
             <Route path="/help" element={<HelpCenter />} />
             <Route path="/careers" element={<Careers />} />
+            <Route path="/testimonials" element={<Testimonials />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </AnimatePresence>
