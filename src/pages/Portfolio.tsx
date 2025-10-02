@@ -152,82 +152,82 @@ const Portfolio: React.FC = () => {
       },
       liveUrl: 'https://www.arionextech.com/'
     },
-    {
-      id: 6,
-      title: 'Healthcare Mobile App',
-      category: 'mobile',
-      client: 'MediCare Plus',
-      description: 'Patient management app with appointment scheduling, telemedicine features, and health tracking.',
-      technologies: ['React Native', 'Firebase', 'WebRTC', 'HealthKit'],
-      image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      duration: '6 months',
-      teamSize: 4,
-      status: 'completed',
-      rating: 5,
-      features: ['Video consultations', 'Health records', 'Appointment booking', 'Prescription management'],
-      results: {
-        downloads: '100K+ downloads',
-        rating: '4.8/5 app store rating',
-        engagement: '90% user retention'
-      }
-    },
-    {
-      id: 3,
-      title: 'AI-Powered Analytics Dashboard',
-      category: 'ai',
-      client: 'DataInsights Corp',
-      description: 'Machine learning platform for predictive analytics and business intelligence with real-time data processing.',
-      technologies: ['Python', 'TensorFlow', 'React', 'PostgreSQL', 'Docker'],
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      duration: '8 months',
-      teamSize: 6,
-      status: 'completed',
-      rating: 5,
-      features: ['Predictive modeling', 'Real-time processing', 'Custom dashboards', 'API integration'],
-      results: {
-        accuracy: '95% prediction accuracy',
-        processing: '10x faster processing',
-        insights: '300+ automated insights'
-      }
-    },
-    {
-      id: 4,
-      title: 'Cloud Infrastructure Migration',
-      category: 'cloud',
-      client: 'TechStart Inc',
-      description: 'Complete migration from on-premise to AWS cloud with auto-scaling and disaster recovery.',
-      technologies: ['AWS', 'Kubernetes', 'Terraform', 'Docker', 'Jenkins'],
-      image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      duration: '3 months',
-      teamSize: 3,
-      status: 'completed',
-      rating: 5,
-      features: ['Auto-scaling', 'Load balancing', 'Disaster recovery', 'Cost optimization'],
-      results: {
-        cost: '40% cost reduction',
-        uptime: '99.9% uptime',
-        performance: '3x better performance'
-      }
-    },
-    {
-      id: 6,
-      title: 'SynkarPlay App',
-      category: 'mobile',
-      client: 'SynkarPlay',
-      description: 'Social media growth platform helping creators and brands boost reach, grow content, and monetize across platforms.',
-      technologies: ['React Native', 'Node.js', 'MongoDB', 'Firebase', 'Social APIs'],
-      image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      duration: '7 months',
-      teamSize: 5,
-      status: 'completed',
-      rating: 5,
-      features: ['Content boosting', 'Growth analytics', 'Reward system', 'Multi-platform support'],
-      results: {
-        users: '50K+ active creators',
-        growth: '+300% average follower growth',
-        engagement: '85% user retention rate'
-      }
-    },
+    // {
+    //   id: 6,
+    //   title: 'Healthcare Mobile App',
+    //   category: 'mobile',
+    //   client: 'MediCare Plus',
+    //   description: 'Patient management app with appointment scheduling, telemedicine features, and health tracking.',
+    //   technologies: ['React Native', 'Firebase', 'WebRTC', 'HealthKit'],
+    //   image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    //   duration: '6 months',
+    //   teamSize: 4,
+    //   status: 'completed',
+    //   rating: 5,
+    //   features: ['Video consultations', 'Health records', 'Appointment booking', 'Prescription management'],
+    //   results: {
+    //     downloads: '100K+ downloads',
+    //     rating: '4.8/5 app store rating',
+    //     engagement: '90% user retention'
+    //   }
+    // },
+    // {
+    //   id: 3,
+    //   title: 'AI-Powered Analytics Dashboard',
+    //   category: 'ai',
+    //   client: 'DataInsights Corp',
+    //   description: 'Machine learning platform for predictive analytics and business intelligence with real-time data processing.',
+    //   technologies: ['Python', 'TensorFlow', 'React', 'PostgreSQL', 'Docker'],
+    //   image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    //   duration: '8 months',
+    //   teamSize: 6,
+    //   status: 'completed',
+    //   rating: 5,
+    //   features: ['Predictive modeling', 'Real-time processing', 'Custom dashboards', 'API integration'],
+    //   results: {
+    //     accuracy: '95% prediction accuracy',
+    //     processing: '10x faster processing',
+    //     insights: '300+ automated insights'
+    //   }
+    // },
+    // {
+    //   id: 4,
+    //   title: 'Cloud Infrastructure Migration',
+    //   category: 'cloud',
+    //   client: 'TechStart Inc',
+    //   description: 'Complete migration from on-premise to AWS cloud with auto-scaling and disaster recovery.',
+    //   technologies: ['AWS', 'Kubernetes', 'Terraform', 'Docker', 'Jenkins'],
+    //   image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    //   duration: '3 months',
+    //   teamSize: 3,
+    //   status: 'completed',
+    //   rating: 5,
+    //   features: ['Auto-scaling', 'Load balancing', 'Disaster recovery', 'Cost optimization'],
+    //   results: {
+    //     cost: '40% cost reduction',
+    //     uptime: '99.9% uptime',
+    //     performance: '3x better performance'
+    //   }
+    // },
+    // {
+    //   id: 6,
+    //   title: 'SynkarPlay App',
+    //   category: 'mobile',
+    //   client: 'SynkarPlay',
+    //   description: 'Social media growth platform helping creators and brands boost reach, grow content, and monetize across platforms.',
+    //   technologies: ['React Native', 'Node.js', 'MongoDB', 'Firebase', 'Social APIs'],
+    //   image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    //   duration: '7 months',
+    //   teamSize: 5,
+    //   status: 'completed',
+    //   rating: 5,
+    //   features: ['Content boosting', 'Growth analytics', 'Reward system', 'Multi-platform support'],
+    //   results: {
+    //     users: '50K+ active creators',
+    //     growth: '+300% average follower growth',
+    //     engagement: '85% user retention rate'
+    //   }
+    // },
     {
       title: 'Swami Vivekananda Institute of Paramedical & Nursing',
       category: 'web',
@@ -267,9 +267,9 @@ const Portfolio: React.FC = () => {
     },
     {
       id: 13,
-      title: 'Complete Clinic Management Software',
+      title: 'DentailOs.AI - Complete Clinic Management Software',
       category: 'saas',
-      client: 'SmartDental Pro',
+      client: 'Sai Dental Clinic',
       description: 'Smart dental/clinic management SaaS with AI features for patient management, appointments, billing, and analytics.',
       technologies: ['React', 'Node.js', 'MongoDB', 'Express', 'AI/ML APIs'],
       image: 'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
@@ -284,120 +284,120 @@ const Portfolio: React.FC = () => {
         revenue: '+180% revenue increase'
       }
     },
-    {
-      id: 14,
-      title: 'StaffEasy Business Management',
-      category: 'saas',
-      client: 'StaffEasy Solutions',
-      description: 'Comprehensive business management SaaS for HR, payroll, project tracking, and team collaboration.',
-      technologies: ['React', 'Node.js', 'PostgreSQL', 'Redis', 'Docker'],
-      image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      duration: '10 months',
-      teamSize: 8,
-      status: 'completed',
-      rating: 5,
-      features: ['HR management', 'Payroll automation', 'Project tracking', 'Team collaboration'],
-      results: {
-        businesses: '200+ businesses using',
-        productivity: '+250% team productivity',
-        cost: '40% operational cost reduction'
-      }
-    },
-    {
-      id: 15,
-      title: 'Client Agreement & Proposal Management SaaS',
-      category: 'saas',
-      client: 'ProposalFlow',
-      description: 'Automated proposal sending, digital signing, and tracking system for businesses and freelancers.',
-      technologies: ['React', 'Node.js', 'MongoDB', 'DocuSign API', 'Stripe'],
-      image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      duration: '6 months',
-      teamSize: 5,
-      status: 'completed',
-      rating: 5,
-      features: ['Proposal builder', 'Digital signatures', 'Progress tracking', 'Payment integration'],
-      results: {
-        proposals: '10K+ proposals processed',
-        signTime: '75% faster signing process',
-        conversion: '+120% proposal conversion'
-      }
-    },
-    {
-      id: 16,
-      title: 'Complete Construction Company Management System',
-      category: 'saas',
-      client: 'BuildPro Management',
-      description: 'Comprehensive construction management with project tracking, finance, HR, and vehicle management.',
-      technologies: ['React', 'Node.js', 'PostgreSQL', 'GPS APIs', 'Accounting APIs'],
-      image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      duration: '12 months',
-      teamSize: 10,
-      status: 'completed',
-      rating: 5,
-      features: ['Project management', 'Financial tracking', 'HR system', 'Vehicle tracking'],
-      results: {
-        projects: '500+ projects managed',
-        efficiency: '+200% project efficiency',
-        cost: '30% cost reduction'
-      }
-    },
-    {
-      id: 17,
-      title: 'Vehicle Management System',
-      category: 'saas',
-      client: 'FleetTrack Pro',
-      description: 'Complete vehicle management with maintenance scheduling, insurance tracking, fuel monitoring, and GPS integration.',
-      technologies: ['React', 'Node.js', 'MongoDB', 'GPS APIs', 'IoT Integration'],
-      image: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      duration: '7 months',
-      teamSize: 6,
-      status: 'completed',
-      rating: 5,
-      features: ['Maintenance tracking', 'Insurance management', 'GPS monitoring', 'Fuel analytics'],
-      results: {
-        vehicles: '2K+ vehicles tracked',
-        maintenance: '60% maintenance cost reduction',
-        efficiency: '+180% fleet efficiency'
-      }
-    },
-    {
-      id: 18,
-      title: 'Fuel Management System',
-      category: 'saas',
-      client: 'FuelTrack Solutions',
-      description: 'Advanced fuel management for bulk and direct fuel records with consumption monitoring and analytics.',
-      technologies: ['React', 'Node.js', 'PostgreSQL', 'IoT Sensors', 'Analytics APIs'],
-      image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      duration: '5 months',
-      teamSize: 4,
-      status: 'completed',
-      rating: 5,
-      features: ['Fuel tracking', 'Consumption analytics', 'Theft detection', 'Cost optimization'],
-      results: {
-        fuel: '1M+ liters tracked',
-        savings: '25% fuel cost savings',
-        theft: '90% theft reduction'
-      }
-    },
-    {
-      id: 19,
-      title: 'Finance Management SaaS',
-      category: 'saas',
-      client: 'FinancePro Dashboard',
-      description: 'Multi-user, multi-company professional finance dashboard with comprehensive accounting and reporting features.',
-      technologies: ['React', 'Node.js', 'PostgreSQL', 'Chart.js', 'Accounting APIs'],
-      image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      duration: '9 months',
-      teamSize: 8,
-      status: 'completed',
-      rating: 5,
-      features: ['Multi-company support', 'Financial reporting', 'Budget planning', 'Tax management'],
-      results: {
-        companies: '300+ companies using',
-        accuracy: '99.8% financial accuracy',
-        time: '70% time savings'
-      }
-    },
+    // {
+    //   id: 14,
+    //   title: 'StaffEasy Business Management',
+    //   category: 'saas',
+    //   client: 'StaffEasy Solutions',
+    //   description: 'Comprehensive business management SaaS for HR, payroll, project tracking, and team collaboration.',
+    //   technologies: ['React', 'Node.js', 'PostgreSQL', 'Redis', 'Docker'],
+    //   image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    //   duration: '10 months',
+    //   teamSize: 8,
+    //   status: 'completed',
+    //   rating: 5,
+    //   features: ['HR management', 'Payroll automation', 'Project tracking', 'Team collaboration'],
+    //   results: {
+    //     businesses: '200+ businesses using',
+    //     productivity: '+250% team productivity',
+    //     cost: '40% operational cost reduction'
+    //   }
+    // },
+    // {
+    //   id: 15,
+    //   title: 'Client Agreement & Proposal Management SaaS',
+    //   category: 'saas',
+    //   client: 'ProposalFlow',
+    //   description: 'Automated proposal sending, digital signing, and tracking system for businesses and freelancers.',
+    //   technologies: ['React', 'Node.js', 'MongoDB', 'DocuSign API', 'Stripe'],
+    //   image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    //   duration: '6 months',
+    //   teamSize: 5,
+    //   status: 'completed',
+    //   rating: 5,
+    //   features: ['Proposal builder', 'Digital signatures', 'Progress tracking', 'Payment integration'],
+    //   results: {
+    //     proposals: '10K+ proposals processed',
+    //     signTime: '75% faster signing process',
+    //     conversion: '+120% proposal conversion'
+    //   }
+    // },
+    // {
+    //   id: 16,
+    //   title: 'Complete Construction Company Management System',
+    //   category: 'saas',
+    //   client: 'BuildPro Management',
+    //   description: 'Comprehensive construction management with project tracking, finance, HR, and vehicle management.',
+    //   technologies: ['React', 'Node.js', 'PostgreSQL', 'GPS APIs', 'Accounting APIs'],
+    //   image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    //   duration: '12 months',
+    //   teamSize: 10,
+    //   status: 'completed',
+    //   rating: 5,
+    //   features: ['Project management', 'Financial tracking', 'HR system', 'Vehicle tracking'],
+    //   results: {
+    //     projects: '500+ projects managed',
+    //     efficiency: '+200% project efficiency',
+    //     cost: '30% cost reduction'
+    //   }
+    // },
+    // {
+    //   id: 17,
+    //   title: 'Vehicle Management System',
+    //   category: 'saas',
+    //   client: 'FleetTrack Pro',
+    //   description: 'Complete vehicle management with maintenance scheduling, insurance tracking, fuel monitoring, and GPS integration.',
+    //   technologies: ['React', 'Node.js', 'MongoDB', 'GPS APIs', 'IoT Integration'],
+    //   image: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    //   duration: '7 months',
+    //   teamSize: 6,
+    //   status: 'completed',
+    //   rating: 5,
+    //   features: ['Maintenance tracking', 'Insurance management', 'GPS monitoring', 'Fuel analytics'],
+    //   results: {
+    //     vehicles: '2K+ vehicles tracked',
+    //     maintenance: '60% maintenance cost reduction',
+    //     efficiency: '+180% fleet efficiency'
+    //   }
+    // },
+    // {
+    //   id: 18,
+    //   title: 'Fuel Management System',
+    //   category: 'saas',
+    //   client: 'FuelTrack Solutions',
+    //   description: 'Advanced fuel management for bulk and direct fuel records with consumption monitoring and analytics.',
+    //   technologies: ['React', 'Node.js', 'PostgreSQL', 'IoT Sensors', 'Analytics APIs'],
+    //   image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    //   duration: '5 months',
+    //   teamSize: 4,
+    //   status: 'completed',
+    //   rating: 5,
+    //   features: ['Fuel tracking', 'Consumption analytics', 'Theft detection', 'Cost optimization'],
+    //   results: {
+    //     fuel: '1M+ liters tracked',
+    //     savings: '25% fuel cost savings',
+    //     theft: '90% theft reduction'
+    //   }
+    // },
+    // {
+    //   id: 19,
+    //   title: 'Finance Management SaaS',
+    //   category: 'saas',
+    //   client: 'FinancePro Dashboard',
+    //   description: 'Multi-user, multi-company professional finance dashboard with comprehensive accounting and reporting features.',
+    //   technologies: ['React', 'Node.js', 'PostgreSQL', 'Chart.js', 'Accounting APIs'],
+    //   image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    //   duration: '9 months',
+    //   teamSize: 8,
+    //   status: 'completed',
+    //   rating: 5,
+    //   features: ['Multi-company support', 'Financial reporting', 'Budget planning', 'Tax management'],
+    //   results: {
+    //     companies: '300+ companies using',
+    //     accuracy: '99.8% financial accuracy',
+    //     time: '70% time savings'
+    //   }
+    // },
     {
       id: 20,
       title: 'Sebayanam Foundation Logo Design',
