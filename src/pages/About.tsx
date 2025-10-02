@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { BuildingOfficeIcon, LightBulbIcon, UserGroupIcon, ClockIcon, GlobeAltIcon } from '@heroicons/react/24/outline';
 import { FaLinkedin, FaTwitter, FaGithub, FaInstagram } from 'react-icons/fa';
 import Logo from '@/assets/arionextech_Logo.png';
+import SEO from '../components/SEO';
 
 const About = () => {
 
@@ -32,6 +33,12 @@ const About = () => {
 
   return (
     <div className="pt-20">
+      <SEO 
+        title="About ArionexTech - Leading Software Development Company | Our Story & Team"
+        description="Learn about ArionexTech, a premier software development company with 5+ years of experience. Meet our expert team and discover our mission to transform businesses through innovative technology solutions."
+        keywords="about ArionexTech, software development company, our team, company story, technology experts, software solutions, IT company India"
+        url="/about"
+      />
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white py-20 overflow-hidden">
         {/* Fallback background pattern */}

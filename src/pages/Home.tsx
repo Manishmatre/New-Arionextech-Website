@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import type { Variants } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 import { 
   ArrowRightIcon, 
   CheckCircleIcon, 
@@ -212,6 +213,12 @@ const Home = () => {
 
   return (
     <div className="pt-20">
+      <SEO 
+        title="ArionexTech - Leading Software Development Company | Custom Software Solutions"
+        description="ArionexTech is a premier software development company in India specializing in custom software solutions, web development, mobile apps, WordPress development, and digital marketing. Transform your business with our innovative technology solutions."
+        keywords="ArionexTech, software development company, custom software development, web development, mobile app development, WordPress development, digital marketing, IT company, software solutions, technology company, India, software company near me"
+        url="/"
+      />
       {/* Hero Section with Background Video */}
       <section className="relative overflow-hidden min-h-screen flex items-center text-white">
         {/* Background Video with Fallback */}

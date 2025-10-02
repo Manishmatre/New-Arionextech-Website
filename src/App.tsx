@@ -2,9 +2,10 @@ import { Routes, Route } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import ScrollToTop from './components/ScrollToTop';
 import CustomCursor from './components/CustomCursor';
+import ScrollToTop from './components/ScrollToTop';
 import FloatingButtons from './components/FloatingButtons';
+import LocalBusinessSchema from './components/LocalBusinessSchema';
 import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
@@ -41,6 +42,7 @@ function App() {
       <ScrollToTop />
       <FloatingButtons />
       <Navbar />
+      <LocalBusinessSchema />
       <main className="flex-grow">
         <AnimatePresence mode="wait">
           <Routes>
