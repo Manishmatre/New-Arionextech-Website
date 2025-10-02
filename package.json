@@ -5,10 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "npm install --legacy-peer-deps && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "netlify-build": "npm run build"
+    "netlify-build": "npm install --legacy-peer-deps && npm run build"
   },
   "engines": {
     "node": "22.x"
