@@ -14,9 +14,9 @@ interface SEOProps {
 }
 
 const SEO = ({
-  title = "ArionexTech - Leading Software Development Company | Custom Software Solutions",
-  description = "ArionexTech is a premier software development company specializing in custom software solutions, web development, mobile apps, WordPress development, and digital marketing. Transform your business with our innovative technology solutions.",
-  keywords = "ArionexTech, software development company, custom software development, web development, mobile app development, WordPress development, digital marketing, IT company, software solutions, technology company, India",
+  title = "ArionexTech Software - Leading Software Development Company | Custom Software Solutions",
+  description = "ArionexTech Software is a premier software development company specializing in custom software solutions, web development, mobile apps, WordPress development, and digital marketing. Transform your business with our innovative technology solutions.",
+  keywords = "ArionexTech Software, ArionexTech, Arionex Tech, software development company, custom software development, web development, mobile app development, WordPress development, digital marketing, IT company, software solutions, technology company, India, Manish Matre",
   image = "/og-image.jpg",
   url = "https://arionextech.com",
   type = "website",
@@ -32,11 +32,11 @@ const SEO = ({
   const defaultSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "ArionexTech",
-    "alternateName": "ArionexTech Software",
+    "name": "ArionexTech Software",
+    "alternateName": ["ArionexTech", "Arionex Tech", "ArionexTech Software Company"],
     "url": "https://arionextech.com",
     "logo": "https://arionextech.com/logo.png",
-    "description": "Leading software development company providing custom software solutions, web development, mobile apps, and digital marketing services.",
+    "description": "ArionexTech Software - Leading software development company providing custom software solutions, web development, mobile apps, and digital marketing services. Founded by Manish Matre.",
     "foundingDate": "2023",
     "founders": [
       {

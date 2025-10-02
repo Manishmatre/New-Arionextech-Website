@@ -214,9 +214,9 @@ const Home = () => {
   return (
     <div className="pt-20">
       <SEO 
-        title="ArionexTech - Leading Software Development Company | Custom Software Solutions"
-        description="ArionexTech is a premier software development company in India specializing in custom software solutions, web development, mobile apps, WordPress development, and digital marketing. Transform your business with our innovative technology solutions."
-        keywords="ArionexTech, software development company, custom software development, web development, mobile app development, WordPress development, digital marketing, IT company, software solutions, technology company, India, software company near me"
+        title="ArionexTech Software - Leading Software Development Company | Custom Software Solutions"
+        description="ArionexTech Software is a premier software development company in India specializing in custom software solutions, web development, mobile apps, WordPress development, and digital marketing. Founded by Manish Matre. Transform your business with our innovative technology solutions."
+        keywords="ArionexTech Software, ArionexTech, Arionex Tech, Manish Matre, software development company, custom software development, web development, mobile app development, WordPress development, digital marketing, IT company, software solutions, technology company, India, software company near me"
         url="/"
       />
       {/* Hero Section with Background Video */}
