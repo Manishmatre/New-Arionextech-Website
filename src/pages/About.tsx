@@ -232,6 +232,7 @@ const About = () => {
                 name: 'Manish Matre', 
                 role: 'CEO & Founder', 
                 image: 'CEO',
+                description: 'Visionary leader driving ArionexTech\'s growth and innovation in software development.',
                 social: {
                   linkedin: 'https://linkedin.com/in/manishmatre',
                   twitter: 'https://twitter.com/manishmatre',
@@ -240,23 +241,25 @@ const About = () => {
                 isFounder: true
               },
               { 
-                name: 'Rahul Singh', 
-                role: 'Lead Developer', 
-                image: 'Developer',
+                name: 'Nidhi Sharma', 
+                role: 'Business Development Executive', 
+                image: 'BDE',
+                description: 'Expert in client relations and business growth, connecting businesses with perfect tech solutions.',
                 social: {
                   linkedin: '#',
-                  github: '#',
+                  twitter: '#',
                   instagram: '#'
                 },
                 isFounder: false
               },
               { 
-                name: 'Anjali Patel', 
-                role: 'UI/UX Designer', 
-                image: 'Designer',
+                name: 'Arjun Kumar', 
+                role: 'Chief Technology Officer', 
+                image: 'CTO',
+                description: 'Technical mastermind overseeing all development projects and ensuring cutting-edge solutions.',
                 social: {
                   linkedin: '#',
-                  instagram: '#',
+                  github: '#',
                   twitter: '#'
                 },
                 isFounder: false
@@ -275,7 +278,8 @@ const About = () => {
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-gray-900 mb-1">{member.name}</h3>
-                  <p className="text-primary font-medium mb-4">{member.role}</p>
+                  <p className="text-primary font-medium mb-2">{member.role}</p>
+                  <p className="text-gray-600 text-sm mb-4">{member.description}</p>
                   
                   {/* Social Links */}
                   <div className="flex justify-start space-x-3">

@@ -84,13 +84,13 @@ const LocalBusinessSchema = () => {
       },
       {
         "@type": "Person", 
-        "name": "Rahul Singh",
-        "jobTitle": "Lead Developer"
+        "name": "Nidhi Sharma",
+        "jobTitle": "Business Development Executive"
       },
       {
         "@type": "Person",
-        "name": "Anjali Sharma", 
-        "jobTitle": "UI/UX Designer"
+        "name": "Arjun Kumar", 
+        "jobTitle": "Chief Technology Officer"
       }
     ],
     "numberOfEmployees": {
